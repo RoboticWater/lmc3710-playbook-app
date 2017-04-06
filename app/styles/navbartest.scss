@@ -1,12 +1,12 @@
 .group {
-    background: yellow;
-    width: 200px;
-    height: 500px;
+    background: oldlace;
+    width: 100%;
+    height: 500px; //this value is what is making all the subgroups run into each other
 }
 .group .subgroup {
-    background: orange;
-    width: 150px;
-    height: 200px;
+    background: lightgrey;
+    width: 100%;
+    height: 200px; //this value is what is making all the subgroups run into each other
 }
 .fixed {
     position: fixed;
