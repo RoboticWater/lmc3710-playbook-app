@@ -1,6 +1,6 @@
 var current = "q1";
 var next = null;
-var questions = ["q1", "q2", "q3", "q4", "q5", "q6"]
+var questions;
 
 $(document).ready(function() {
 	$('#start-button').on('click', function() {
