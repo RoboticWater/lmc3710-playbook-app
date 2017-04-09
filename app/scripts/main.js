@@ -1,10 +1,9 @@
-var current = null;
-var next = "q1";
+var current = "q1";
+var next = null;
 var questions = ["q1", "q2", "q3", "q4", "q5", "q6"]
 
 $(document).ready(function() {
 	$('#start-button').on('click', function() {
-		nextQuestion();
 		$('.intro').toggleClass('done');
 	});
 	$('#next').on('click', function() {
@@ -16,15 +15,24 @@ $(document).ready(function() {
 });
 
 function nextQuestion() {
+	if (current ==="q1") {
+		$('.intro').css({'display': 'none'});
+	}
 	$('#' + current).toggleClass('current')
 	current = getNext(current);
 	$('#' + current).toggleClass('current')
 }
 
 function prevQuestion() {
-	$('#' + current).toggleClass('current')
-	current = getPrev(current);
-	$('#' + current).toggleClass('current')
+	console.log(current);
+	if (current ==="q1") {
+		$('.intro').css({'display': 'block'});
+		$('.intro').toggleClass('done');
+	} else {
+		$('#' + current).toggleClass('current')
+		current = getPrev(current);
+		$('#' + current).toggleClass('current')
+	}
 }
 
 function getNext(q) {
