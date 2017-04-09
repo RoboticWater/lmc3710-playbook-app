@@ -1,10 +1,12 @@
 .group {
-    background: oldlace;
+    background: #C2EED9;
     width: 100%;
     height: 8665px; //this value is what is making all the subgroups run into each other
+    font-family: "WHTF";
+    font-weight: 200;
 }
 .group .subgroup {
-    background: lightgrey;
+    background: #C2EED9;
     width: 100%;
     height: 1470px; //this value is what is making all the subgroups run into each other
 }
@@ -21,11 +23,13 @@
 
 /* all links */
 .bs-docs-sidebar .nav>li>a {
-    color: #999;
+    color: #1d1d1d;
     border-left: 2px solid transparent;
     padding: 4px 20px;
-    font-size: 13px;
-    font-weight: 400;
+    font-family: "WHTF";
+	font-weight: 200;
+    font-size: 16px;
+//    font-weight: 400;
 }
 
 /* nested links */
@@ -74,4 +78,15 @@
 .group, .subgroup {
     padding-top: 50px;
     margin-top: -50px;
+}
+
+hr {
+    margin-top: 10px;
+    margin-left: 3%;
+    width: 35%;
+    border-top: 1px solid darkgrey;
+}
+
+h4 {
+    margin-left: 7.5%;
 }

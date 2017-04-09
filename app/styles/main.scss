@@ -92,6 +92,8 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+    font-family: "WHTF";
+    font-weight: 200;
   }
 }
 
@@ -99,4 +101,12 @@ body {
   background-color: aliceblue; /*temp for now*/
   border-radius: 8px;
   margin: 15px;
+}
+
+h3 {
+    margin-left: 5%;
+}
+
+.col-xs-3 {
+    width: 13.5%;
 }
