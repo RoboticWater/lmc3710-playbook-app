@@ -1,8 +1,31 @@
 var current = "q1";
 var next = null;
-var questions;
+var questions = {
+	'q1':{'name':'Question One',
+	'description': 'Example description', 'category': 'Get Organized', 'negate': false,
+	'next':['q2','q2','q2','q2','q3']},
+
+	'q2':{'name':'Question Two',
+	'description': 'Example description', 'category': 'Get Organized', 'negate': true,
+	'next':['q3','q3','q3','q3','q3']},
+
+	'q3':{'name':'Question Three',
+	'description': 'Example description', 'category': 'Get Organized', 'negate': false,
+	'next':['q4','q4','q4','q4','q4']},
+
+	'q4':{'name':'Question Four',
+	'description': 'Example description', 'category': 'Get Organized', 'negate': false,
+	'next':['end','end','end','end','end']}
+}
 
 $(document).ready(function() {
+	$.getJSON("/resources/questions.json", function(json) {
+		console.log(1);
+		console.log(json);
+		questions = json;
+	}).fail(function(d, textStatus, error) {
+        console.error("getJSON failed, status: " + textStatus + ", error: "+error)
+    });
 	$('#start-button').on('click', function() {
 		$('.intro').toggleClass('done');
 	});
