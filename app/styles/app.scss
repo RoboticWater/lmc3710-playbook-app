@@ -40,14 +40,19 @@ body {
   overflow-y: hidden;
   .content {
     height: 100vh;
+    -webkit-transition: margin-top 1s ease;
+    transition: margin-top 1s ease;
+    &.done {
+      margin-top: -100vh;
+    }
     .shelf {
       margin-bottom: 0;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       height: 15%;
     }
     .questions {
-  position: relative;
+      position: relative;
       height: 72%;
     }
   }
@@ -65,24 +70,22 @@ body {
   }
 }
 
+.results {
+  height: 100vh;
+}
+
 .question {
   position: absolute;
   display: none;
   right:0;
   left:0;
   overflow: hidden;
-  // opacity: 0;
   height: 100%;
   text-align: center;
-  // border-top: solid #f2f2f2 1px;
-
-  // -webkit-transition: opacity 0.75s cubic-bezier(.42,.1,.2,.96);
-  // transition: opacity 0.75s cubic-bezier(.42,.1,.2,.96);
-
-  // -webkit-box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
-  // -moz-box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
-  box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
-  // &.current {
-  //   opacity: 1;
-  // }
+  box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.25);
+  .slider {
+    position: absolute;
+    bottom: 40%;
+    transform: translateX(-50%);
+  }
 }

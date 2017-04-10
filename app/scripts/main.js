@@ -36,9 +36,13 @@ function nextQuestion() {
 	});
 	current = getNext(current);
 	if (!order.includes(current)) order.push(current);
-	$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
-	qSlider = $('#' + current + '-slider');
-	qSlider.slider();
+	if (current === 'end') {
+		$('.content').toggleClass('done');
+	} else {
+		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
+		qSlider = $('#' + current + '-slider');
+		qSlider.slider();
+	}
 }
 
 function prevQuestion() {
