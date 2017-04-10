@@ -3,7 +3,6 @@ var current = "q1";
 var questions;
 
 var qSlider;
-var sliderVal = 2;
 
 $(document).ready(function() {
 	$.getJSON("/resources/questions.json", function(json) {
@@ -52,7 +51,7 @@ function prevQuestion() {
 }
 
 function getNext(q) {
-	return questions[q].next[sliderVal];
+	return questions[q].next[qSlider.slider('getValue')];
 }
 
 function getPrev(q) {
