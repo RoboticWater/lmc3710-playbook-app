@@ -14,6 +14,7 @@ $(document).ready(function() {
 		$('.intro').toggleClass('done');
 		qSlider = $('#' + current + '-slider');
 		qSlider.slider();
+		$('#' + current).fadeIn(750);
 	});
 	$('#next').on('click', function() {
 		nextQuestion();
@@ -29,24 +30,37 @@ function nextQuestion() {
 	} else {
 		$('#' + getPrev()).remove();
 	}
-	$('#' + current).toggleClass('current');
+	$('#' + current).fadeOut(550, function() { 
+		$(this).remove();
+		$('#' + current).fadeIn(550);
+	});
 	current = getNext(current);
-	console.log(current);
-	order.push(current);
+	if (!order.includes(current)) order.push(current);
 	$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
 	qSlider = $('#' + current + '-slider');
-	console.log(qSlider);
 	qSlider.slider();
+
+	// $('#' + current).toggleClass('current');
+	// current = getNext(current);
+	// if (!order.includes(current)) order.push(current);
+	// $('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
+	// qSlider = $('#' + current + '-slider');
+	// qSlider.slider();
 }
 
 function prevQuestion() {
 	if (current ==="q1") {
-		$('.intro').css({'display': 'block'});
 		$('.intro').toggleClass('done');
+		$('.intro').css({'display': 'block'});
 	} else {
-		$('#' + current).toggleClass('current');
+		$('#' + current).fadeOut(550, function() { 
+			$(this).remove();
+			$('#' + current).fadeIn(550);
+		});
 		current = getPrev(current);
-		$('.questions').prepend(buildQuestion(current, questions[current].name, questions[current].description));
+		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
+		qSlider = $('#' + current + '-slider');
+		qSlider.slider();
 	}
 }
 
@@ -55,7 +69,7 @@ function getNext(q) {
 }
 
 function getPrev(q) {
-	return order[order.indexOf('q') - 1];
+	return order[order.indexOf(q) - 1];
 }
 
 function buildQuestion(id, name, description) {
@@ -70,7 +84,7 @@ function buildQuestion(id, name, description) {
             data-slider-min="1"\
             data-slider-max="5"\
             data-slider-step="1"\
-            data-slider-value="3"\
+            data-slider-value="2"\
             data-slider-tooltip="hide" id="'+ id +'-slider">\
           </article>';
 }

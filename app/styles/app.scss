@@ -47,6 +47,7 @@ body {
       height: 15%;
     }
     .questions {
+  position: relative;
       height: 72%;
     }
   }
@@ -65,17 +66,23 @@ body {
 }
 
 .question {
+  position: absolute;
+  display: none;
+  right:0;
+  left:0;
   overflow: hidden;
-  height: 0;
-  display: block;
-  // border-top: solid #f2f2f2 1px;
-  -webkit-transition: height 1s cubic-bezier(.42,.1,.2,.96);
-  transition: height 0.75s cubic-bezier(.42,.1,.2,.96);
+  // opacity: 0;
+  height: 100%;
   text-align: center;
-  -webkit-box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
-  -moz-box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
+  // border-top: solid #f2f2f2 1px;
+
+  // -webkit-transition: opacity 0.75s cubic-bezier(.42,.1,.2,.96);
+  // transition: opacity 0.75s cubic-bezier(.42,.1,.2,.96);
+
+  // -webkit-box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
+  // -moz-box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
   box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.55);
-  &.current {
-    height: 100%;
-  }
+  // &.current {
+  //   opacity: 1;
+  // }
 }
