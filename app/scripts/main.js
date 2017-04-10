@@ -30,7 +30,7 @@ function nextQuestion() {
 	} else {
 		$('#' + getPrev()).remove();
 	}
-	$('#' + current).fadeOut(550, function() {
+	$('#' + current).fadeOut(550, function() { 
 		$(this).remove();
 		$('#' + current).fadeIn(550);
 	});
@@ -53,7 +53,7 @@ function prevQuestion() {
 		$('.intro').toggleClass('done');
 		$('.intro').css({'display': 'block'});
 	} else {
-		$('#' + current).fadeOut(550, function() {
+		$('#' + current).fadeOut(550, function() { 
 			$(this).remove();
 			$('#' + current).fadeIn(550);
 		});
@@ -88,25 +88,3 @@ function buildQuestion(id, name, description) {
             data-slider-tooltip="hide" id="'+ id +'-slider">\
           </article>';
 }
-
-var data1 = {
-    labels: ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"],
-    datasets: [
-        {
-            label: "My First dataset",
-            backgroundColor: "rgba(179,181,198,0.2)",
-            borderColor: "rgba(179,181,198,1)",
-            pointBackgroundColor: "rgba(179,181,198,1)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(179,181,198,1)",
-            data: [10, 4, 5, 3, 7]
-        },
-    ]
-};
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'radar',
-    data: data1
-});
