@@ -11,6 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -85,21 +86,15 @@
             <h1>Question 1</h1>
             <img src="" alt="" class="col-md-4 col-centered">
             <p class="col-md-4 col-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</p>
-          </article>
-          <article class="question row" id="q2">
-            <h1>Question 2</h1>
-            <img src="" alt="" class="col-md-4 col-centered">
-            <p class="col-md-4 col-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</p>
-          </article>
-          <article class="question row" id="q3">
-            <h1>Question 3</h1>
-            <img src="" alt="" class="col-md-4 col-centered">
-            <p class="col-md-4 col-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</p>
-          </article>
-          <article class="question row" id="q4">
-            <h1>Question 4</h1>
-            <img src="" alt="" class="col-md-4 col-centered">
-            <p class="col-md-4 col-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</p>
+            <input type="text" 
+            name="slider"
+            data-provide="slider" 
+            data-slider-ticks="[0, 1, 2, 3, 4]" 
+            data-slider-min="1"
+            data-slider-max="5"
+            data-slider-step="1"
+            data-slider-value="3"
+            data-slider-tooltip="hide" id="q1-slider">
           </article>
         </div>
         <div class="navigation">
@@ -111,45 +106,6 @@
           </div>
         </div>
     </div>
-      <!-- <div class="content">
-        <div class="intro">
-          <h1>Introduction</h1>
-          <button id="start-button">Start</button>
-        </div>
-        <div class="main">
-          <div class="shelf">
-            Shelf
-          </div>
-          <div class="questions">
-            <article class="question" id="q1">
-              <h1>Question 1</h1>
-              <p>Explanation</p>
-            </article>
-            <article class="question" id="q2">
-              <h1>Question 2</h1>
-              <p>Explanation</p>
-            </article>
-            <article class="question" id="q3">
-              <h1>Question 3</h1>
-              <p>Explanation</p>
-            </article>
-            <article class="question" id="q4">
-              <h1>Question 4</h1>
-              <p>Explanation</p>
-            </article>
-          </div>
-          <div class="buttons">
-            <button id="prev">Back</button>
-            <button id="next">Next</button>
-          </div>
-        </div>
-        <div class="results">
-          
-        </div>
-      </div>
-      <nav class="progress">
-        Progress
-      </nav> -->
     
 
     <!-- build:js scripts/vendor.js -->
@@ -157,6 +113,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/chart.js/dist/Chart.js"></script>
+    <script src="/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

@@ -1,33 +1,20 @@
+var order = ["q1"];
 var current = "q1";
-var next = null;
-var questions = {
-	'q1':{'name':'Question One',
-	'description': 'Example description', 'category': 'Get Organized', 'negate': false,
-	'next':['q2','q2','q2','q2','q3']},
+var questions;
 
-	'q2':{'name':'Question Two',
-	'description': 'Example description', 'category': 'Get Organized', 'negate': true,
-	'next':['q3','q3','q3','q3','q3']},
-
-	'q3':{'name':'Question Three',
-	'description': 'Example description', 'category': 'Get Organized', 'negate': false,
-	'next':['q4','q4','q4','q4','q4']},
-
-	'q4':{'name':'Question Four',
-	'description': 'Example description', 'category': 'Get Organized', 'negate': false,
-	'next':['end','end','end','end','end']}
-}
+var qSlider;
+var sliderVal = 2;
 
 $(document).ready(function() {
 	$.getJSON("/resources/questions.json", function(json) {
-		console.log(1);
-		console.log(json);
 		questions = json;
 	}).fail(function(d, textStatus, error) {
         console.error("getJSON failed, status: " + textStatus + ", error: "+error)
     });
 	$('#start-button').on('click', function() {
 		$('.intro').toggleClass('done');
+		qSlider = $('#' + current + '-slider');
+		qSlider.slider();
 	});
 	$('#next').on('click', function() {
 		nextQuestion();
@@ -40,27 +27,51 @@ $(document).ready(function() {
 function nextQuestion() {
 	if (current ==="q1") {
 		$('.intro').css({'display': 'none'});
+	} else {
+		$('#' + getPrev()).remove();
 	}
-	$('#' + current).toggleClass('current')
+	$('#' + current).toggleClass('current');
 	current = getNext(current);
-	$('#' + current).toggleClass('current')
+	console.log(current);
+	order.push(current);
+	$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
+	qSlider = $('#' + current + '-slider');
+	console.log(qSlider);
+	qSlider.slider();
 }
 
 function prevQuestion() {
-	console.log(current);
 	if (current ==="q1") {
 		$('.intro').css({'display': 'block'});
 		$('.intro').toggleClass('done');
 	} else {
-		$('#' + current).toggleClass('current')
+		$('#' + current).toggleClass('current');
 		current = getPrev(current);
-		$('#' + current).toggleClass('current')
+		$('.questions').prepend(buildQuestion(current, questions[current].name, questions[current].description));
 	}
 }
 
 function getNext(q) {
-	return questions[questions.indexOf(q) + 1];
+	return questions[q].next[sliderVal];
 }
+
 function getPrev(q) {
-	return questions[questions.indexOf(q) - 1];
+	return order[order.indexOf('q') - 1];
+}
+
+function buildQuestion(id, name, description) {
+	return '<article class="question row current" id="' + id + '">\
+            <h1>' + name + '</h1>\
+            <img src="" alt="" class="col-md-4 col-centered">\
+            <p class="col-md-4 col-centered">' + description +'</p>\
+            <input type="text" \
+            name="slider-'+id+'"\
+            data-provide="slider" \
+            data-slider-ticks="[0, 1, 2, 3, 4]" \
+            data-slider-min="1"\
+            data-slider-max="5"\
+            data-slider-step="1"\
+            data-slider-value="3"\
+            data-slider-tooltip="hide" id="'+ id +'-slider">\
+          </article>';
 }
