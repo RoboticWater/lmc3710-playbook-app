@@ -11,6 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -26,63 +27,97 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+    <div class="col-sm-3 col-md-2 sidebar">
+      <!-- <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Export</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="">Nav item</a></li>
+        <li><a href="">Nav item again</a></li>
+        <li><a href="">One more nav</a></li>
+        <li><a href="">Another nav item</a></li>
+        <li><a href="">More navigation</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="">Nav item again</a></li>
+        <li><a href="">One more nav</a></li>
+        <li><a href="">Another nav item</a></li>
+      </ul> -->
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+      <div class="intro">
+        <div class="jumbotron">
+          <h1>Foundations</h1>
+          <div class="features">
+          <div class="col-md-4">
+            <div class="panel panel-success">
+              <div class="panel-heading"><strong>Assess</strong> what features your organization currently has and which strategies it emplays</div>
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</div>
             </div>
           </div>
-        <a class="btn btn-large btn-info" href="navBarTest.html">navBar</a>
-
+          <div class="col-md-4">
+            <div class="panel panel-info">
+              <div class="panel-heading"><strong>Examine</strong> where your ognaization currently lies in relationship to the playbook</div>
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-danger">
+              <div class="panel-heading"><strong>Discover</strong> strategies and resources to help you move your organization forward</div>
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</div>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+        <div class="col-md-12 text-center"> 
+          <button id="start-button" type="button" class="btn btn-lg btn-primary">Get Started</button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="shelf well row">
+          Shelf
+        </div>
+        <div class="questions">
+          <article class="question row current" id="q1">
+            <h1>Question 1</h1>
+            <img src="" alt="" class="col-md-4 col-centered">
+            <p class="col-md-4 col-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim consequat nibh nec commodo. Fusce vitae est ac neque vulputate viverra rutrum ut turpis.</p>
+            <input type="text" 
+            name="slider"
+            data-provide="slider" 
+            data-slider-ticks="[0, 1, 2, 3, 4]" 
+            data-slider-min="1"
+            data-slider-max="5"
+            data-slider-step="1"
+            data-slider-value="2"
+            data-slider-tooltip="hide" id="q1-slider">
+          </article>
+        </div>
+        <div class="navigation">
+          <div class="col-md-4">
+            <button id="prev" type="button" class="btn btn-lg">Previous</button>
+          </div>
+          <div class="col-md-4">
+            <button id="next" type="button" class="btn btn-lg btn-primary">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="results">
+        results
+      </div>
     </div>
+    
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/chart.js/dist/Chart.js"></script>
+    <script src="/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
