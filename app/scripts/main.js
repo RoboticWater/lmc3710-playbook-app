@@ -1,14 +1,14 @@
-var order = ["q1"];
-var current = "q1";
+var order = ['q1'];
+var current = 'q1';
 var questions;
 
 var qSlider;
 
 $(document).ready(function() {
-	$.getJSON("/resources/questions.json", function(json) {
+	$.getJSON('/resources/questions.json', function(json) {
 		questions = json;
 	}).fail(function(d, textStatus, error) {
-        console.error("getJSON failed, status: " + textStatus + ", error: "+error)
+        console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
     });
 	$('#start-button').on('click', function() {
 		$('.intro').toggleClass('done');
@@ -25,7 +25,7 @@ $(document).ready(function() {
 });
 
 function nextQuestion() {
-	if (current ==="q1") {
+	if (current ==='q1') {
 		$('.intro').css({'display': 'none'});
 	} else {
 		$('#' + getPrev()).remove();
@@ -46,7 +46,7 @@ function nextQuestion() {
 }
 
 function prevQuestion() {
-	if (current ==="q1") {
+	if (current ==='q1') {
 		$('.intro').toggleClass('done');
 		$('.intro').css({'display': 'block'});
 	} else {
