@@ -39,13 +39,6 @@ function nextQuestion() {
 	$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
 	qSlider = $('#' + current + '-slider');
 	qSlider.slider();
-
-	// $('#' + current).toggleClass('current');
-	// current = getNext(current);
-	// if (!order.includes(current)) order.push(current);
-	// $('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
-	// qSlider = $('#' + current + '-slider');
-	// qSlider.slider();
 }
 
 function prevQuestion() {
@@ -88,3 +81,8 @@ function buildQuestion(id, name, description) {
             data-slider-tooltip="hide" id="'+ id +'-slider">\
           </article>';
 }
+Array.prototype.insert = function(index) {
+    this.splice.apply(this, [index, 0].concat(
+        Array.prototype.slice.call(arguments, 1)));
+    return this;
+};
