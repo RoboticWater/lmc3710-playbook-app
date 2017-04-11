@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 var order = ['q1'];
 var current = 'q1';
+=======
+var order = ["q1"];
+var current = "q1";
+var resultData = [0,0,0,0,0];
+>>>>>>> b91847f0156b43f87365abc2de3dbdfd30946c71
 var questions;
 
 var qSlider;
@@ -30,7 +36,7 @@ function nextQuestion() {
 	} else {
 		$('#' + getPrev()).remove();
 	}
-	$('#' + current).fadeOut(550, function() { 
+	$('#' + current).fadeOut(550, function() {
 		$(this).remove();
 		$('#' + current).fadeIn(550);
 	});
@@ -53,7 +59,7 @@ function prevQuestion() {
 		$('.intro').toggleClass('done');
 		$('.intro').css({'display': 'block'});
 	} else {
-		$('#' + current).fadeOut(550, function() { 
+		$('#' + current).fadeOut(550, function() {
 			$(this).remove();
 			$('#' + current).fadeIn(550);
 		});
@@ -87,4 +93,34 @@ function buildQuestion(id, name, description) {
             data-slider-value="2"\
             data-slider-tooltip="hide" id="'+ id +'-slider">\
           </article>';
+<<<<<<< HEAD
 }
+=======
+}
+Array.prototype.insert = function(index) {
+    this.splice.apply(this, [index, 0].concat(
+        Array.prototype.slice.call(arguments, 1)));
+    return this;
+};
+
+var data1 = {
+    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5"],
+    datasets: [{
+            label: "Results data",
+            backgroundColor: "rgba(179,181,198,0.2)",
+            borderColor: "rgba(179,181,198,1)",
+            pointBackgroundColor: "rgba(179,181,198,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(179,181,198,1)",
+            data: [2, 9, 4, 5, 10]
+        }
+    ]
+};
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: data1
+});
+>>>>>>> b91847f0156b43f87365abc2de3dbdfd30946c71
