@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-var order = ['q1'];
-var current = 'q1';
-=======
 var order = ["q1"];
 var current = "q1";
 var resultData = [0,0,0,0,0];
->>>>>>> b91847f0156b43f87365abc2de3dbdfd30946c71
 var questions;
 
 var qSlider;
@@ -93,9 +88,6 @@ function buildQuestion(id, name, description) {
             data-slider-value="2"\
             data-slider-tooltip="hide" id="'+ id +'-slider">\
           </article>';
-<<<<<<< HEAD
-}
-=======
 }
 Array.prototype.insert = function(index) {
     this.splice.apply(this, [index, 0].concat(
@@ -123,4 +115,3 @@ var myChart = new Chart(ctx, {
     type: 'radar',
     data: data1
 });
->>>>>>> b91847f0156b43f87365abc2de3dbdfd30946c71
