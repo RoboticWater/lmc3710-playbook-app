@@ -1,6 +1,5 @@
 var order = ["q1"];
 var current = "q1";
-var resultData = [0,0,0,0,0];
 var questions;
 
 var qSlider;
@@ -26,27 +25,24 @@ $(document).ready(function() {
 });
 
 function nextQuestion() {
-	if (current ==='q1') {
+	if (current ==="q1") {
 		$('.intro').css({'display': 'none'});
 	} else {
 		$('#' + getPrev()).remove();
 	}
-	$('#' + current).fadeOut(550, function() {
+	$('#' + current).fadeOut(550, function() { 
 		$(this).remove();
 		$('#' + current).fadeIn(550);
 	});
 	current = getNext(current);
 	if (!order.includes(current)) order.push(current);
-	$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
-	qSlider = $('#' + current + '-slider');
-	qSlider.slider();
-
-	// $('#' + current).toggleClass('current');
-	// current = getNext(current);
-	// if (!order.includes(current)) order.push(current);
-	// $('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
-	// qSlider = $('#' + current + '-slider');
-	// qSlider.slider();
+	if (current === 'end') {
+		$('.content').toggleClass('done');
+	} else {
+		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
+		qSlider = $('#' + current + '-slider');
+		qSlider.slider();
+	}
 }
 
 function prevQuestion() {
