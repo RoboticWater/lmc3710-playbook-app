@@ -113,7 +113,7 @@ var data1 = {
 
 function addData(x, y) {
   resultData[x] = y;
-  window.alert(x + " " + y);
+  // window.alert(x + " " + y);
 }
 
 
