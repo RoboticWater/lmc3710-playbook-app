@@ -1,5 +1,6 @@
 var order = ["q1"];
 var current = "q1";
+var count = 0;
 var questions;
 
 var qSlider;
@@ -30,7 +31,8 @@ function nextQuestion() {
 	} else {
 		$('#' + getPrev()).remove();
 	}
-	$('#' + current).fadeOut(550, function() { 
+	addData(count,qSlider.slider('getValue'));
+	$('#' + current).fadeOut(550, function() {
 		$(this).remove();
 		$('#' + current).fadeIn(550);
 	});
@@ -39,6 +41,7 @@ function nextQuestion() {
 	if (current === 'end') {
 		$('.content').toggleClass('done');
 	} else {
+	  count++;
 		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
 		qSlider = $('#' + current + '-slider');
 		qSlider.slider();
@@ -54,6 +57,8 @@ function prevQuestion() {
 			$(this).remove();
 			$('#' + current).fadeIn(550);
 		});
+		addData(count,qSlider.slider('getValue'));
+		count--;
 		current = getPrev(current);
 		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
 		qSlider = $('#' + current + '-slider');
@@ -92,7 +97,7 @@ Array.prototype.insert = function(index) {
 };
 
 var data1 = {
-    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5"],
+    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4"],
     datasets: [{
             label: "Results data",
             backgroundColor: "rgba(179,181,198,0.2)",
@@ -101,13 +106,30 @@ var data1 = {
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgba(179,181,198,1)",
-            data: [2, 9, 4, 5, 10]
+            data: resultData
         }
     ]
 };
 
+function addData(x, y) {
+  resultData[x] = y;
+  window.alert(x + " " + y);
+}
+
+
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'radar',
-    data: data1
+    data: data1,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scale: {
+        ticks: {
+          min: 0,
+          max: 5,
+          beginAtZero: true
+        }
+      }
+    }
 });
