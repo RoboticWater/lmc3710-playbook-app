@@ -1,7 +1,9 @@
 var order = ["q1"];
 var current = "q1";
-var count = 0;
 var questions;
+var resultData = {};
+
+var fadeSpeed = 250;
 
 var qSlider;
 
@@ -12,10 +14,7 @@ $(document).ready(function() {
         console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
     });
 	$('#start-button').on('click', function() {
-		$('.intro').toggleClass('done');
-		qSlider = $('#' + current + '-slider');
-		qSlider.slider();
-		$('#' + current).fadeIn(750);
+		goToQuestion('q1');
 	});
 	$('#next').on('click', function() {
 		nextQuestion();
@@ -26,25 +25,14 @@ $(document).ready(function() {
 });
 
 function nextQuestion() {
-	if (current ==="q1") {
-		$('.intro').css({'display': 'none'});
-	} else {
-		$('#' + getPrev()).remove();
-	}
-	addData(count,qSlider.slider('getValue'));
-	$('#' + current).fadeOut(550, function() {
-		$(this).remove();
-		$('#' + current).fadeIn(550);
-	});
-	current = getNext(current);
-	if (!order.includes(current)) order.push(current);
-	if (current === 'end') {
+	if (!$('#bar-' + current).hasClass('done'))
+		$('#bar-' + current).toggleClass('done');
+	if (getNext(current) === 'end') {
 		$('.content').toggleClass('done');
+		setData()
 	} else {
-	  count++;
-		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
-		qSlider = $('#' + current + '-slider');
-		qSlider.slider();
+		goToQuestion(getNext(current));
+		if (!order.includes(current)) order.push(current);
 	}
 }
 
@@ -53,17 +41,33 @@ function prevQuestion() {
 		$('.intro').toggleClass('done');
 		$('.intro').css({'display': 'block'});
 	} else {
-		$('#' + current).fadeOut(550, function() {
-			$(this).remove();
-			$('#' + current).fadeIn(550);
-		});
-		addData(count,qSlider.slider('getValue'));
-		count--;
-		current = getPrev(current);
-		$('.questions').append(buildQuestion(current, questions[current].name, questions[current].description));
-		qSlider = $('#' + current + '-slider');
-		qSlider.slider();
+		if (!$('#bar-' + current).hasClass('done'))
+			$('#bar-' + current).toggleClass('done');
+		goToQuestion(getPrev(current))
 	}
+}
+
+function goToQuestion(q) {
+	if (!$('.intro').hasClass('done'))$('.intro').toggleClass('done');
+	console.log(q);
+	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description));
+	if (qSlider) {
+		addData(current, qSlider.slider('getValue'));
+		$('#' + current).fadeOut(fadeSpeed, function() {
+			$(this).remove();
+			$('#' + q).fadeIn(fadeSpeed);
+		});
+	} else {
+		$('#' + q).fadeIn(fadeSpeed);
+	}
+	if ($('#' + questions[current].group).hasClass('current'))
+		$('#' + questions[current].group).toggleClass('current');
+	current = q;
+	if (!$('#' + questions[current].group).hasClass('current'))
+		$('#' + questions[current].group).toggleClass('current');
+	qSlider = $('#' + current + '-slider');
+	qSlider.slider({'value': resultData[current] ? resultData[current] : 2});
+	
 }
 
 function getNext(q) {
@@ -95,41 +99,39 @@ Array.prototype.insert = function(index) {
         Array.prototype.slice.call(arguments, 1)));
     return this;
 };
+var data1;
+var ctx;
+var myChart;
+function setData() {
+	ctx = document.getElementById('myChart').getContext('2d');
+	var arr = []
+	jQuery.each(resultData, function(i, val) {
+	  arr.push(val);
+	});
+	data1 = {
+	    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4"],
+	    datasets: [{
+	            label: "Results data",
+	            backgroundColor: "rgba(179,181,198,0.2)",
+	            borderColor: "rgba(179,181,198,1)",
+	            pointBackgroundColor: "rgba(179,181,198,1)",
+	            pointBorderColor: "#fff",
+	            pointHoverBackgroundColor: "#fff",
+	            pointHoverBorderColor: "rgba(179,181,198,1)",
+	            data: [0,4,3,2,1]
+	        }
+	    ]
+	};
+	myChart = new Chart(ctx, {
+	    type: 'radar',
+	    data: data1
+	});
 
-var data1 = {
-    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4"],
-    datasets: [{
-            label: "Results data",
-            backgroundColor: "rgba(179,181,198,0.2)",
-            borderColor: "rgba(179,181,198,1)",
-            pointBackgroundColor: "rgba(179,181,198,1)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(179,181,198,1)",
-            data: resultData
-        }
-    ]
-};
+}
 
-function addData(x, y) {
-  resultData[x] = y;
-  // window.alert(x + " " + y);
+function addData(q, y) {
+  resultData[q] = y;
 }
 
 
-var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
-    type: 'radar',
-    data: data1,
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scale: {
-        ticks: {
-          min: 0,
-          max: 5,
-          beginAtZero: true
-        }
-      }
-    }
-});
+

@@ -1,17 +1,17 @@
 {
 	"q1":{"name":"Question One",
-	"description": "Example description 1", "category": "Get Organized", "negate": false,
+	"description": "Example description 1", "category": "Get Organized", "group": "gettin-out", "negate": false,
 	"next":["q2","q2","q2","q2","q3"]},
 
 	"q2":{"name":"Question Two",
-	"description": "Example description 2", "category": "Get Organized", "negate": true,
+	"description": "Example description 2", "category": "Get Organized", "group": "gettin-out", "negate": true,
 	"next":["q3","q3","q3","q3","q3"]},
 
 	"q3":{"name":"Question Three",
-	"description": "Example description 3", "category": "Get Organized", "negate": false,
+	"description": "Example description 3", "category": "Get Organized", "group": "gettin-out", "negate": false,
 	"next":["q4","q4","q4","q4","q4"]},
 
 	"q4":{"name":"Question Four",
-	"description": "Example description 4", "category": "Get Organized", "negate": false,
+	"description": "Example description 4", "category": "Get Organized", "group": "party-hard", "negate": false,
 	"next":["end","end","end","end","end"]}
 }
