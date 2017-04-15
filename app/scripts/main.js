@@ -22,6 +22,7 @@ $(document).ready(function() {
 	$('#prev').on('click', function() {
 		prevQuestion();
 	});
+    generateSideChart();
 });
 
 function nextQuestion() {
@@ -83,15 +84,6 @@ function buildQuestion(id, name, description) {
             <h1>' + name + '</h1>\
             <img src="" alt="" class="col-md-4 col-centered">\
             <p class="col-md-4 col-centered">' + description +'</p>\
-            <input type="text" \
-            name="slider-'+id+'"\
-            data-provide="slider" \
-            data-slider-ticks="[0, 1, 2, 3, 4]" \
-            data-slider-min="1"\
-            data-slider-max="5"\
-            data-slider-step="1"\
-            data-slider-value="2"\
-            data-slider-tooltip="hide" id="'+ id +'-slider">\
           </article>';
 }
 Array.prototype.insert = function(index) {
@@ -102,6 +94,7 @@ Array.prototype.insert = function(index) {
 var data1;
 var ctx;
 var myChart;
+
 function setData() {
 	ctx = document.getElementById('myChart').getContext('2d');
 	var arr = []
@@ -128,6 +121,34 @@ function setData() {
 	});
 
 }
+
+function generateSideChart() {
+	ctx = document.getElementById('sideChart').getContext('2d');
+	var arr = []
+	jQuery.each(resultData, function(i, val) {
+	  arr.push(val);
+	});
+	data1 = {
+	    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4"],
+	    datasets: [{
+	            label: "Results data",
+	            backgroundColor: "rgba(179,181,198,0.2)",
+	            borderColor: "rgba(179,181,198,1)",
+	            pointBackgroundColor: "rgba(179,181,198,1)",
+	            pointBorderColor: "#fff",
+	            pointHoverBackgroundColor: "#fff",
+	            pointHoverBorderColor: "rgba(179,181,198,1)",
+	            data: [0,4,3,2,1]
+	        }
+	    ]
+	};
+	myChart = new Chart(ctx, {
+	    type: 'radar',
+	    data: data1
+	});
+
+}
+
 
 function addData(q, y) {
   resultData[q] = y;
