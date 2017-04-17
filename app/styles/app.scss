@@ -77,6 +77,25 @@ body {
   }
 }
 
+#rightColumn {
+    background-color: #fafafa; 
+    border-right: 1px solid #eee;
+    height: 100vh;
+    right: 0;
+    padding-top: 1%;
+    display: none;
+    &:after {
+        content: "";
+        background: #f00;
+        position: fixed;
+        display: block;
+        width: 100px;
+        height: 100px;
+        top: 100px;
+        left: 100px;
+    }
+}
+
 .sub-play.current {
   & > a {
     color: #888;
@@ -114,6 +133,19 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fafafa;
+    border-right: 1px solid #eee;
+  }
+    #rightColumn {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
     z-index: 1000;
     display: block;
     padding: 20px;
