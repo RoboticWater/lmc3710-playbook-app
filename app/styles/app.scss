@@ -159,6 +159,8 @@ body {
 .main {
   height: 100vh;
   overflow-y: hidden;
+  width: 700px;
+  margin: 0 auto;
   .content {
     height: 100vh;
     -webkit-transition: margin-top 1s ease;
