@@ -1,17 +1,21 @@
 {
 	"q1":{"name":"Question One",
 	"description": "Example description 1", "category": "Get Organized", "group": "gettin-out", "negate": false,
-	"next":["q2","q2","q2","q2","q3"]},
+	"next":["q2","q2","q2","q2","q3"],
+  "labels":["thing1","thing2","thing3","thing4","thing5"]},
 
 	"q2":{"name":"Question Two",
 	"description": "Example description 2", "category": "Get Organized", "group": "gettin-out", "negate": true,
-	"next":["q3","q3","q3","q3","q3"]},
+	"next":["q3","q3","q3","q3","q3"],
+  "labels":["thing1","thing2","thing3","thing4","thing5"]},
 
 	"q3":{"name":"Question Three",
 	"description": "Example description 3", "category": "Get Organized", "group": "gettin-out", "negate": false,
-	"next":["q4","q4","q4","q4","q4"]},
+	"next":["q4","q4","q4","q4","q4"],
+  "labels":["yes","no"]},
 
 	"q4":{"name":"Question Four",
 	"description": "Example description 4", "category": "Get Organized", "group": "party-hard", "negate": false,
-	"next":["end","end","end","end","end"]}
+	"next":["end","end","end","end","end"],
+  "labels":["thing1","thing2","thing3","thing4","thing5"]}
 }
