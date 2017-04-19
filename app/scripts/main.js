@@ -53,7 +53,7 @@ function goToQuestion(q) {
 	console.log(q);
 	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description));
 	if (qSlider) {
-		addData(current, qSlider.slider('getValue'));
+		addData(current, $('#' + q + '-radio input:radio:checked').val());
 		$('#' + current).fadeOut(fadeSpeed, function() {
 			$(this).remove();
 			$('#' + q).fadeIn(fadeSpeed);
@@ -66,13 +66,13 @@ function goToQuestion(q) {
 	current = q;
 	if (!$('#' + questions[current].group).hasClass('current'))
 		$('#' + questions[current].group).toggleClass('current');
-	qSlider = $('#' + current + '-slider');
-	qSlider.slider({'value': resultData[current] ? resultData[current] : 2});
-	
+	qSlider = $('#' + current + '-radio');
+
 }
 
 function getNext(q) {
-	return questions[q].next[qSlider.slider('getValue')];
+  var testo = $('#' + q + '-radio input:radio:checked').val()
+	return questions[q].next[$('#' + q + '-radio label.active input').val()];
 }
 
 function getPrev(q) {
@@ -80,16 +80,20 @@ function getPrev(q) {
 }
 
 function buildQuestion(id, name, description) {
-	return '<article class="question row current" id="' + id + '">\
+	var test = '<article class="question row current" id="' + id + '">\
             <h1>' + name + '</h1>\
             <img src="" alt="" class="col-md-4 col-centered">\
             <p class="col-md-4 col-centered">' + description +'</p>\
-          </article>';
-}
-Array.prototype.insert = function(index) {
-    this.splice.apply(this, [index, 0].concat(
-        Array.prototype.slice.call(arguments, 1)));
-    return this;
+            <div class="btn-group" id="' + id + '-radio" data-toggle = "buttons">';
+  for (var i = 0; i < questions[id].labels.length; i++) {
+    test += '<label class="btn btn-primary">\
+    <input type="radio" name="options" id="option1" value=' + i + '>';
+    test += questions[id].labels[i];
+    test+= '</label>';
+  }
+  test += '</div>\
+  </article>';
+  return test;
 };
 var data1;
 var ctx;
