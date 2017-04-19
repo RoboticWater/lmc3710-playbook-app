@@ -30,6 +30,8 @@ function nextQuestion() {
 		$('#bar-' + current).toggleClass('done');
 	if (getNext(current) === 'end') {
 		$('.content').toggleClass('done');
+		var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
+    		addData(current, temp);
 		setData()
 	} else {
 		goToQuestion(getNext(current));
@@ -53,7 +55,8 @@ function goToQuestion(q) {
 	console.log(q);
 	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description));
 	if (qSlider) {
-		addData(current, $('#' + q + '-radio input:radio:checked').val());
+    var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
+		addData(current, temp);
 		$('#' + current).fadeOut(fadeSpeed, function() {
 			$(this).remove();
 			$('#' + q).fadeIn(fadeSpeed);
@@ -71,7 +74,6 @@ function goToQuestion(q) {
 }
 
 function getNext(q) {
-  var testo = $('#' + q + '-radio input:radio:checked').val()
 	return questions[q].next[$('#' + q + '-radio label.active input').val()];
 }
 
@@ -115,13 +117,21 @@ function setData() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: [0,4,3,2,1]
+	            data: arr
 	        }
 	    ]
 	};
 	myChart = new Chart(ctx, {
 	    type: 'radar',
-	    data: data1
+	    data: data1,
+	    options: {
+        scale: {
+          ticks: {
+            beginAtZero : true,
+            max : 5
+           }
+        }
+       }
 	});
 
 }
@@ -142,13 +152,21 @@ function generateSideChart() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: [0,4,3,2,1]
+	            data: [2,4,3,2]
 	        }
 	    ]
 	};
 	myChart = new Chart(ctx, {
 	    type: 'radar',
-	    data: data1
+	    data: data1,
+	    options: {
+        scale: {
+          ticks: {
+            beginAtZero : true,
+            max : 5
+          }
+        }
+      }
 	});
 
 }
