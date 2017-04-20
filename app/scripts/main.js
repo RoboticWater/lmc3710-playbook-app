@@ -30,6 +30,8 @@ function nextQuestion() {
 		$('#bar-' + current).toggleClass('done');
 	if (getNext(current) === 'end') {
 		$('.content').toggleClass('done');
+		var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
+    		addData(current, temp);
 		setData()
 	} else {
 		goToQuestion(getNext(current));
@@ -53,7 +55,8 @@ function goToQuestion(q) {
 	console.log(q);
 	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description));
 	if (qSlider) {
-		addData(current, qSlider.slider('getValue'));
+    var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
+		addData(current, temp);
 		$('#' + current).fadeOut(fadeSpeed, function() {
 			$(this).remove();
 			$('#' + q).fadeIn(fadeSpeed);
@@ -66,13 +69,12 @@ function goToQuestion(q) {
 	current = q;
 	if (!$('#' + questions[current].group).hasClass('current'))
 		$('#' + questions[current].group).toggleClass('current');
-	qSlider = $('#' + current + '-slider');
-	qSlider.slider({'value': resultData[current] ? resultData[current] : 2});
-	
+	qSlider = $('#' + current + '-radio');
+
 }
 
 function getNext(q) {
-	return questions[q].next[qSlider.slider('getValue')];
+	return questions[q].next[$('#' + q + '-radio label.active input').val()];
 }
 
 function getPrev(q) {
@@ -80,16 +82,20 @@ function getPrev(q) {
 }
 
 function buildQuestion(id, name, description) {
-	return '<article class="question row current" id="' + id + '">\
+	var test = '<article class="question row current" id="' + id + '">\
             <h1>' + name + '</h1>\
             <img src="" alt="" class="col-md-4 col-centered">\
             <p class="col-md-4 col-centered">' + description +'</p>\
-          </article>';
-}
-Array.prototype.insert = function(index) {
-    this.splice.apply(this, [index, 0].concat(
-        Array.prototype.slice.call(arguments, 1)));
-    return this;
+            <div class="btn-group" id="' + id + '-radio" data-toggle = "buttons">';
+  for (var i = 0; i < questions[id].labels.length; i++) {
+    test += '<label class="btn btn-primary">\
+    <input type="radio" name="options" id="option1" value=' + i + '>';
+    test += questions[id].labels[i];
+    test+= '</label>';
+  }
+  test += '</div>\
+  </article>';
+  return test;
 };
 var data1;
 var ctx;
@@ -111,13 +117,21 @@ function setData() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: [0,4,3,2,1]
+	            data: arr
 	        }
 	    ]
 	};
 	myChart = new Chart(ctx, {
 	    type: 'radar',
-	    data: data1
+	    data: data1,
+	    options: {
+        scale: {
+          ticks: {
+            beginAtZero : true,
+            max : 5
+           }
+        }
+       }
 	});
 
 }
@@ -138,13 +152,21 @@ function generateSideChart() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: [0,4,3,2,1]
+	            data: [2,4,3,2]
 	        }
 	    ]
 	};
 	myChart = new Chart(ctx, {
 	    type: 'radar',
-	    data: data1
+	    data: data1,
+	    options: {
+        scale: {
+          ticks: {
+            beginAtZero : true,
+            max : 5
+          }
+        }
+      }
 	});
 
 }
