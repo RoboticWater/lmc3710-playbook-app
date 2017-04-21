@@ -64,11 +64,10 @@ function goToQuestion(q) {
 	} else {
 		$('#' + q).fadeIn(fadeSpeed);
 	}
-	if ($('#' + questions[current].group).hasClass('current'))
-		$('#' + questions[current].group).toggleClass('current');
+	$('#' + questions[current].group).removeClass('current');
 	current = q;
-	if (!$('#' + questions[current].group).hasClass('current'))
-		$('#' + questions[current].group).toggleClass('current');
+	console.log('#' + questions[current].group);
+	$('#' + questions[current].group).addClass('current');
 	qSlider = $('#' + current + '-radio');
 
 }

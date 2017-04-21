@@ -1,48 +1,7 @@
-body {
-  padding: 0;
-}
-
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-
-.progress {
-  // background: #d14;
-  background: #fff;
-  position: fixed;
-  right: 0;
-  margin: 0;
-  height: 51px;
-}
-
-
-
-#rightColumn {
-    background-color: #fafafa; 
-    border-right: 1px solid #eee;
-    height: 100vh;
-    right: 0;
-    padding-top: 1%;
-    display: none;
-    // &:after {
-    //     content: "";
-    //     background: #f00;
-    //     position: fixed;
-    //     display: block;
-    //     width: 100px;
-    //     height: 100px;
-    //     top: 100px;
-    //     left: 100px;
-    // }
-}
-
-
-
 .main {
   height: 100vh;
   display: block;
-  overflow-y: hidden;
+  overflow: hidden;
   width: calc(100% - 600px);
   margin-left: 250px;
   .content {

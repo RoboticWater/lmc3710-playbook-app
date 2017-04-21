@@ -1,91 +1,76 @@
+$yellow: #edac00;
+$purple: #a967d3;
+$blue: #23a3d0;
+$green: #87dab0;
+
 .sidebar {
-  display: none;
+  background-color: #fafafa;
+  border-right: 1px solid #eee;
+  bottom: 0;
   font-size: 11pt;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  position: fixed;
+  transition: left 0.3s ease;
+  z-index: 1000;
   width: 210px;
   a {
     color: #cacaca;
-    transition: color 0.5s ease;
     text-decoration: none;
+    transition: color 0.5s ease;
   }
   li {
     list-style-type: none;
   }
   & > ul {
-    position: relative;
-    // display: inline-block;
     padding: 0 20px;
-    // left: 0px;
+    position: relative;
     &:before {
-      position: absolute;
-      left: 10px;
-      top: 0;
-      content: "";
-      height: 100%;
-      width: 2px;
       background: #888;
+      bottom: 10px;
+      left: 10px;
+      top: 10px;
+      content: "";
+      position: absolute;
+      width: 2px;
     }
     & > li {
       position: relative;
       padding-left: 4px;
       &:before {
+        background: #888;
+        border-radius: 6px;
         content: "";
+        left: -12px;
+        top: 7px;
         position: absolute;
         width: 6px;
         height: 6px;
-        left: -12px;
-        top: 7px;
-        background: #888;
-        border-radius: 6px;
       }
       &:after {
-        position: absolute;
-        content: "";
         background: #888;
+        content: "";
+        left: -10px;
+        top: 9px;
+        position: absolute;
         height: 2px;
         width: 11px;
-        top: 9px;
-        left: -10px;
       }
-      // & > a {
-      //   padding-left: 25px;
-      // }
       & > ul {
+        position: relative;
         padding: 0;
-        & > li {
-          transform: translate(-5px,0);
+        overflow-y: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+        transform: translate(-5px,0);
+        li {
           font-size: 9pt;
         }
       }
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fafafa;
-    border-right: 1px solid #eee;
-  }
-    #rightColumn {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fafafa;
-    border-right: 1px solid #eee;
   }
 }
 
@@ -95,6 +80,9 @@
   }
   .current a {
     color: #888;
+  }
+  ul {
+    max-height: 100px;
   }
 }
 
@@ -112,17 +100,96 @@
       transition: background 0.5s ease;
       &.done {
         background: #29f;
-        // -webkit-box-shadow: 0px 0px 2px 0px rgba(32,144,240,0.55);
-        // -moz-box-shadow: 0px 0px 2px 0px rgba(32,144,240,0.55);
-        // box-shadow: 0px 0px 2px 0px rgba(32,144,240,0.55);
       }
     }
   }
 }
 
-.make-a-plan a:hover {
-  color: #f23;
+#bring-people-in a {
+  &:hover {
+    color: $yellow;
+  }
+  &.done {
+    &:hover {
+      color: #fff;
+    }
+    color: $yellow;
+  }
 }
-.know-your-community a:hover {
-  color: #a2d;
+#know-your-community a:hover {
+  &:hover {
+    color: $purple;
+  }
+  &.done {
+    &:hover {
+      color: #fff;
+    }
+    color: $purple;
+  }
+}
+#focus-on-issues a:hover {
+  &:hover {
+    color: $blue;
+  }
+  &.done {
+    &:hover {
+      color: #fff;
+    }
+    color: $blue;
+  }
+}
+#talk-it-up a:hover {
+  &:hover {
+    color: $green;
+  }
+  &.done {
+    &:hover {
+      color: #fff;
+    }
+    color: $green;
+  }
+}
+
+#toggle-nav {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  z-index: 5000;
+  top: 10px;
+  left: 210px;
+  transition: transform 0.3s ease;
+  transition: left 0.3s ease;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+body.hide-leftbar {
+  #toggle-nav {
+    left: 10px;
+    transform: rotate(180deg);
+  }
+  .sidebar {
+    left: -210px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    left: -210px;
+  }
+  #toggle-nav {
+    left: 10px;
+    transform: rotate(180deg);
+  }
+  body.hide-leftbar {
+    #toggle-nav {
+      left: 210px;
+    }
+    .sidebar {
+      left: 0;
+    }
+  }
 }

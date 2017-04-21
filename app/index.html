@@ -27,32 +27,32 @@
     <div class="sidebar">
       <ul>
         <li class="sub-play current" id="intro-page"><a href="#">Intro</a></li>
-        <li class="sub-play make-a-plan" id="sub-play-1"><a href="#">Bring People In</a>
+        <li class="sub-play" id="bring-people-in"><a href="#">Bring People In</a>
           <ul>
             <li id="gettin-out"><a href="#" onclick="goToQuestion('q1')">
               <p>Communication</p>
               <div class="parts">
                 <div class="spacer"><div class="bar" id="bar-q1"></div></div>
                 <div class="spacer"><div class="bar" id="bar-q2"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q2"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q2"></div></div>
                 <div class="spacer"><div class="bar" id="bar-q3"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q5"></div></div>
               </div>
             </a></li>
             <li id="party-hard"><a href="#" onclick="goToQuestion('q4')">
               <p>Know your Members</p>
               <div class="parts">
-                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
-                <div class="spacer"><div class="bar" id="bar-q4"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q6"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q7"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q8"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q9"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q10"></div></div>
+                <div class="spacer"><div class="bar" id="bar-q11"></div></div>
               </div>
             </a></li>
           </ul>
         </li>
-        <li class="sub-play" id="sub-play-1"><a href="#">Know your Community</a>
+        <li class="sub-play" id="know-your-community"><a href="#">Know your Community</a>
           <ul>
             <li id=""><a href="">
               <p>Online Presence</p>
@@ -84,7 +84,7 @@
             </a></li>
           </ul>
         </li>
-        <li class="sub-play" id="sub-play-1"><a href="#">Focus on Issues</a>
+        <li class="sub-play" id="focus-on-issues"><a href="#">Focus on Issues</a>
           <ul>
             <li id=""><a href="">
               <p>Problem-Solving</p>
@@ -128,7 +128,7 @@
             </a></li>
           </ul>
         </li>
-        <li class="sub-play" id="sub-play-1"><a href="#">Talk it Up</a>
+        <li class="sub-play" id="talk-it-up"><a href="#">Talk it Up</a>
           <ul>
             <li id=""><a href="">
               <p>Leadership</p>
@@ -172,6 +172,7 @@
         <li class="sub-play" id="results-page"><a href="#">Results</a></li>
       </ul>
     </div>
+    <img id="toggle-nav" src="images/arrow-01.svg"></img>
     <div class="main">
       <div class="intro">
         <div class="jumbotron">
@@ -179,20 +180,20 @@
           <p class="lead" style="padding: 15px;">An interactive questionnaire based off of the Atlanta Community Engagement Playbook to aid community associations in organizing and growing the foundations of their organizations.</p>
           <div class="features">
             <div class="col-md-3">
-              <img class="img-circle" src="images/bringpplin.svg" style="width:100px;height:100px;">
+              <img class="img-circle yellow" src="images/bringpplin.svg">
             </div>
             <div class="col-md-3">
-              <img class="img-circle" src="images/focusonissues.svg" style="width:100px;height:100px;">
+              <img class="img-circle purple" src="images/focusonissues.svg">
             </div>
             <div class="col-md-3">
-              <img class="img-circle" src="images/knowyourcomm.svg" style="width:100px;height:100px;">
+              <img class="img-circle blue" src="images/knowyourcomm.svg">
             </div>
             <div class="col-md-3">
-              <img class="img-circle" src="images/talkitup.svg" style="width:100px;height:100px;">
+              <img class="img-circle green" src="images/talkitup.svg">
             </div>
           </div>
           <div class="col-md-12 text-center">
-            <button id="start-button" type="button" class="btn btn-lg btn-primary">Assess your Foundation</button>
+            <button id="start-button" type="button" class="btn btn-lg btn-primary">Assess Your Foundation</button>
           </div>
         </div>
       </div>
@@ -248,16 +249,19 @@
         </div>
       </div>
     </div>
-      <div class="col-sm-3 col-md-2" id="rightColumn" style="width: 300px;">
-          <div class="container-fluid">
-              <div class="chart-box">
-                <canvas id="sideChart"></canvas>
-              </div>
-          </div>
-          <div class="container-fluid" style= "height: 67%;">
-              <p>yo Jolena put your stickers in this container</p>
-          </div>
-      </div>
+
+    <img id="toggle-graph" src="images/arrow-01.svg"></img>
+
+    <div class="col-sm-3 col-md-2" id="rightColumn">
+        <div class="container-fluid">
+            <div class="chart-box">
+              <canvas id="sideChart"></canvas>
+            </div>
+        </div>
+        <div class="container-fluid" style= "height: 67%;">
+            <p>yo Jolena put your stickers in this container</p>
+        </div>
+    </div>
 
 
     <!-- build:js scripts/vendor.js -->
@@ -287,5 +291,6 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script src="scripts/toggles.js"></script>
   </body>
 </html>

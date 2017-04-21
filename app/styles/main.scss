@@ -4,6 +4,8 @@ $icon-font-path: '../fonts/';
 // endbower
 
 @import "app";
+@import "intro";
+@import "rightbar";
 @import "leftbar";
 
 
@@ -104,12 +106,4 @@ h3 {
 
 .col-xs-3 {
     width: 13.5%;
-}
-
-.chart-box {
-
-}
-
-.img-circle {
-    border: 1px solid black;
 }

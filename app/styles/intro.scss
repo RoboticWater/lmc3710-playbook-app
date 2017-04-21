@@ -1,0 +1,27 @@
+$yellow: #edac00;
+$purple: #a967d3;
+$blue: #23a3d0;
+$green: #87dab0;
+
+.img-circle {
+  border: 5px solid;
+  // width: 100px;
+  // height: 100px;
+  width: 60%;
+  width: 60%;
+  min-width: 90px;
+  min-height: 90px;
+  background: #fff;
+  &.yellow {
+	 border-color: $yellow;
+  }
+  &.purple {
+	 border-color: $purple;
+  }
+  &.blue {
+	 border-color: $blue;
+  }
+  &.green {
+	 border-color: $green;
+  }
+}
