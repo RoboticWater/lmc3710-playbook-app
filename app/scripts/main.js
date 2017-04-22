@@ -7,6 +7,14 @@ var fadeSpeed = 250;
 
 var qSlider;
 
+window.onresize = displayWindowSize;
+window.onload = displayWindowSize;
+function displayWindowSize() {
+    var myWidth = window.innerWidth;
+    var myHeight = window.innerHeight;
+    document.getElementById("dimensions").innerHTML = myWidth + "x" + myHeight;
+};
+
 $(document).ready(function() {
 	$.getJSON('/resources/questions.json', function(json) {
 		questions = json;
@@ -26,8 +34,7 @@ $(document).ready(function() {
 });
 
 function nextQuestion() {
-	if (!$('#bar-' + current).hasClass('done'))
-		$('#bar-' + current).toggleClass('done');
+	$('#bar-' + current).addClass('done');
 	if (getNext(current) === 'end') {
 		$('.content').toggleClass('done');
 		var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
@@ -64,10 +71,11 @@ function goToQuestion(q) {
 	} else {
 		$('#' + q).fadeIn(fadeSpeed);
 	}
-	$('#' + questions[current].group).removeClass('current');
+	$('#' + questions[current].subplay).removeClass('current');
 	current = q;
 	console.log('#' + questions[current].group);
-	$('#' + questions[current].group).addClass('current');
+	$('#' + questions[current].subplay).addClass('current');
+	$('#' + questions[current].subplay).addClass('active');
 	qSlider = $('#' + current + '-radio');
 
 }

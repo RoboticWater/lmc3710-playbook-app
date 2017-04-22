@@ -3,8 +3,9 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 155.4 155.4" style="enable-background:new 0 0 155.4 155.4;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#87DAB0;}
-	.st1{fill:none;stroke:#87DAB0;stroke-width:5;stroke-miterlimit:10;}
+	<!-- 87DAB0 -->
+	.st0{fill:#27da90;}
+	.st1{fill:none;stroke:#27da90;stroke-width:5;stroke-miterlimit:10;}
 </style>
 <title>talkitup</title>
 <circle class="st0" cx="25" cy="66.5" r="19.3"/>

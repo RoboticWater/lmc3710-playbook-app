@@ -2,8 +2,11 @@
   height: 100vh;
   display: block;
   overflow: hidden;
-  width: calc(100% - 600px);
-  margin-left: 250px;
+  width: 1000px;
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: margin 0.3s ease;
+  transition: width 0.3s ease;
   .content {
     height: 100vh;
     -webkit-transition: margin-top 1s ease;
@@ -23,16 +26,29 @@
   }
 }
 
-.intro {
-  height: 100vh;
-  // max-height: 100vh;
-  overflow: hidden;
-  text-align: center;
-  display: block;
-  -webkit-transition: margin-top 1s ease;
-  transition: margin-top 1s ease;
-  &.done {
-    margin-top: -100vh;
+@media (max-width: 1665px) {
+  .main {
+    width: calc(100% - 680px);
+  }
+}
+@media (max-width: 1400px) {
+  .main {
+    width: calc(100% - 390px);
+    margin-left: 50px;
+  }
+  .hide-rightbar .main {
+    width: 100%;
+    margin: 0 auto ;
+  }
+}
+@media (max-width: 1000px) { 
+  .main {
+    width: calc(100% - 80px);
+    margin: 0 auto;
+  }
+  .hide-rightbar .main {
+    width: calc(100% - 80px);
+    margin: 0 auto;
   }
 }
 

@@ -26,7 +26,7 @@
   <body>
     <div class="sidebar">
       <ul>
-        <li class="sub-play current" id="intro-page"><a href="#">Intro</a></li>
+        <li class="sub-play active" id="intro-page"><a href="#">Intro</a></li>
         <li class="sub-play" id="bring-people-in"><a href="#">Bring People In</a>
           <ul>
             <li id="gettin-out"><a href="#" onclick="goToQuestion('q1')">
@@ -177,25 +177,16 @@
       <div class="intro">
         <div class="jumbotron">
           <h1 class="display-3">Foundation</h1>
-          <p class="lead" style="padding: 15px;">An interactive questionnaire based off of the Atlanta Community Engagement Playbook to aid community associations in organizing and growing the foundations of their organizations.</p>
-          <div class="features">
-            <div class="col-md-3">
-              <img class="img-circle yellow" src="images/bringpplin.svg">
-            </div>
-            <div class="col-md-3">
-              <img class="img-circle purple" src="images/focusonissues.svg">
-            </div>
-            <div class="col-md-3">
-              <img class="img-circle blue" src="images/knowyourcomm.svg">
-            </div>
-            <div class="col-md-3">
-              <img class="img-circle green" src="images/talkitup.svg">
-            </div>
-          </div>
-          <div class="col-md-12 text-center">
-            <button id="start-button" type="button" class="btn btn-lg btn-primary">Assess Your Foundation</button>
-          </div>
+          <p id="dimensions"></p>
+          <p class="lead">An interactive questionnaire based off of the Atlanta Community Engagement Playbook to aid community associations in organizing and growing the foundations of their organizations.</p>
         </div>
+        <div class="features">
+          <img class="img-circle yellow" src="images/bringpplin.svg">
+          <img class="img-circle purple" src="images/focusonissues.svg">
+          <img class="img-circle blue" src="images/knowyourcomm.svg">
+          <img class="img-circle green" src="images/talkitup.svg">
+        </div>
+        <button id="start-button" type="button" class="btn btn-lg btn-primary">Assess Your Foundation</button>
       </div>
       <div class="content">
         <div class="shelf well row">
