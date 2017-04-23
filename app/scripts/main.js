@@ -48,8 +48,7 @@ function nextQuestion() {
 
 function prevQuestion() {
 	if (current ==='q1') {
-		$('.intro').toggleClass('done');
-		$('.intro').css({'display': 'block'});
+		goHome();
 	} else {
 		if (!$('#bar-' + current).hasClass('done'))
 			$('#bar-' + current).toggleClass('done');
@@ -57,9 +56,12 @@ function prevQuestion() {
 	}
 }
 
+function goHome() {
+	$('.intro').removeClass('done');
+}
+
 function goToQuestion(q) {
-	if (!$('.intro').hasClass('done'))$('.intro').toggleClass('done');
-	console.log(q);
+	$('.intro').addClass('done');
 	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description));
 	if (qSlider) {
     var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
@@ -73,9 +75,10 @@ function goToQuestion(q) {
 	}
 	$('#' + questions[current].subplay).removeClass('current');
 	current = q;
-	console.log('#' + questions[current].group);
+	// console.log('#' + questions[current].group);
 	$('#' + questions[current].subplay).addClass('current');
 	$('#' + questions[current].subplay).addClass('active');
+	$('#' + questions[current].group).addClass('active');
 	qSlider = $('#' + current + '-radio');
 
 }

@@ -1,6 +1,6 @@
 #rightColumn {
-  background-color: #f0f0f0;
-  border-right: 1px solid #eee;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
   display: block;
   padding: 20px;
   position: fixed;
@@ -40,7 +40,7 @@ body.hide-rightbar {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   #toggle-graph {
     right: 10px;
     transform: rotate(0deg);

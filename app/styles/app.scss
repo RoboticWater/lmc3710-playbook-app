@@ -7,7 +7,10 @@
   margin: 0 auto;
   transition: margin 0.3s ease;
   transition: width 0.3s ease;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
   .content {
+    background: rgb(245, 245, 245);
     height: 100vh;
     -webkit-transition: margin-top 1s ease;
     transition: margin-top 1s ease;
@@ -15,13 +18,16 @@
       margin-top: -100vh;
     }
     .shelf {
+      box-shadow: none;
       margin-bottom: 0;
       border-radius: 0;
       height: 15%;
     }
     .questions {
+      background: #fff;
       position: relative;
       height: 72%;
+      border-bottom: 1px solid #ddd;
     }
   }
 }
@@ -41,7 +47,7 @@
     margin: 0 auto ;
   }
 }
-@media (max-width: 1000px) { 
+@media (max-width: 1100px) { 
   .main {
     width: calc(100% - 80px);
     margin: 0 auto;
@@ -71,7 +77,7 @@
   overflow: hidden;
   height: 100%;
   text-align: center;
-  box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.25);
+  // box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.25);
   .slider {
     position: absolute;
     bottom: 40%;
