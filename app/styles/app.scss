@@ -115,3 +115,27 @@
     border-radius: 0px;
     border-color: #edac00;
 }
+
+#customPanelIntKnowCommunity {
+    background-color: #b175d7;
+    width: 20%; //this will be done with javascript when we connect the results page to the graph
+    height: 20px;
+    border-radius: 0px;
+    border-color: #b175d7;
+}
+
+#customPanelIntFocusIssues {
+    background-color: #23a3d0;
+    width: 70%; //this will be done with javascript when we connect the results page to the graph
+    height: 20px;
+    border-radius: 0px;
+    border-color: #23a3d0;
+}
+
+#customPanelIntTalkUp {
+    background-color: #27da90;
+    width: 100%; //this will be done with javascript when we connect the results page to the graph
+    height: 20px;
+    border-radius: 0px;
+    border-color: #27da90;
+}
