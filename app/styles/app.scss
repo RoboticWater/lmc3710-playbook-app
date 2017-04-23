@@ -67,6 +67,7 @@
   .going-from-here {
     margin-top: 20px;
   }
+  overflow-y: scroll;
 }
 
 .question {
@@ -99,4 +100,18 @@
   #next {
     right: 20%;
   }
+}
+
+#customPanelExt {
+    border: 1px solid #ddd;
+    height: 21px;
+    border-radius: 0px;
+}
+
+#customPanelIntBringPeopleIn {
+    background-color: #edac00;
+    width: 50%; //this will be done with javascript when we connect the results page to the graph
+    height: 20px;
+    border-radius: 0px;
+    border-color: #edac00;
 }
