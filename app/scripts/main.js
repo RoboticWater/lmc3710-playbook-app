@@ -36,10 +36,7 @@ $(document).ready(function() {
 function nextQuestion() {
 	$('#bar-' + current).addClass('done');
 	if (getNext(current) === 'end') {
-		$('.content').toggleClass('done');
-		var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
-    		addData(current, temp);
-		setData()
+		goResponses();
 	} else {
 		goToQuestion(getNext(current));
 		if (!order.includes(current)) order.push(current);
@@ -60,9 +57,17 @@ function goHome() {
 	$('.intro').removeClass('done');
 }
 
+function goResults() {
+	$('.intro').addClass('done');
+	$('.content').toggleClass('done');
+	var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
+	addData(current, temp);
+	setData()
+}
+
 function goToQuestion(q) {
 	$('.intro').addClass('done');
-	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description));
+	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description, questions[q].values));
 	if (qSlider) {
     var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
 		addData(current, temp);
@@ -91,22 +96,21 @@ function getPrev(q) {
 	return order[order.indexOf(q) - 1];
 }
 
-function buildQuestion(id, name, description) {
-	var test = '<article class="question row current" id="' + id + '">\
-            <h1>' + name + '</h1>\
-            <img src="" alt="" class="col-md-4 col-centered">\
-            <p class="col-md-4 col-centered">' + description +'</p>\
-            <div class="btn-group" id="' + id + '-radio" data-toggle = "buttons">';
-  for (var i = 0; i < questions[id].labels.length; i++) {
-    test += '<label class="btn btn-primary">\
-    <input type="radio" name="options" id="option1" value=' + i + '>';
-    test += questions[id].labels[i];
-    test+= '</label>';
-  }
-  test += '</div>\
-  </article>';
-  return test;
-};
+function buildQuestion(id, name, description, value) {
+	var question = '<article class="question row current" id="' + id + '">' + 
+            '<h1>' + name + '</h1>' +
+            '<p>' + description +'</p>' +
+            '<form class="radio-buttons" id="' + id + '-radio">';
+    for (var i = 0; i < questions[id].labels.length; i++) {
+    	question += '<div><input type="radio" name="response" id="option' + i + '" value="' + value[i] + '">' + 
+    		'<label for="option' + i + '">' + questions[id].labels[i] + '</label></div>'
+	    // question += '<label class="btn btn-primary radio-btn">' + 
+		   //  '<div class="label"><p>' + questions[id].labels[i] + '</p></div>' +
+		   //  '<input type="radio" name="options" id="option1" value=' + i + '></label>';
+  	}
+  	question += '</form></article>';
+  	return question;
+}
 var data1;
 var ctx;
 var myChart;

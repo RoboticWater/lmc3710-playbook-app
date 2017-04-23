@@ -3,26 +3,30 @@
 		"name":"Question One",
 		"description": "Example description 1", "group": "communication", "subplay": "bring-people-in",
 		"next":["q2","q2","q2","q2","q3"],
-		"labels":["thing1","thing2","thing3","thing4","thing5"]
+		"labels":["Very Unsatisfied","thing2","thing3","thing4","thing5"],
+		"values":[1,2,3,4,5]
 	},
 
 	"q2":{"name":"Question Two",
 		"description": "Example description 2", "group": "communication", "subplay": "bring-people-in",
 		"next":["q3","q3","q3","q3","q3"],
-		"labels":["thing1","thing2","thing3","thing4","thing5"]
+		"labels":["thing1","thing2","thing3","thing4","thing5"],
+		"values":[1,2,3,4,5]
 	},
 
 	"q3":{
 		"name":"Question Three",
 		"description": "Example description 3", "group": "communication", "subplay": "bring-people-in",
-		"next":["q4","q4","q4","q4","q4"],
-		"labels":["yes","no"]
+		"next":["q4","q4"],
+		"labels":["yes","no"],
+		"values":[1,5]
 	},
 
 	"q4":{
 		"name":"Question Four",
 		"description": "Example description 4", "group": "communication", "subplay": "bring-people-in",
 		"next":["end","end","end","end","end"],
-		"labels":["thing1","thing2","thing3","thing4","thing5"]
+		"labels":["thing1","thing2","thing3","thing4","thing5"],
+		"values":[1,2,3,4,5]
 	}
 }
