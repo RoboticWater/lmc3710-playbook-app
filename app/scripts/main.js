@@ -55,11 +55,12 @@ function prevQuestion() {
 
 function goHome() {
 	$('.intro').removeClass('done');
+	$('.content').removeClass('done');
 }
 
 function goResults() {
 	$('.intro').addClass('done');
-	$('.content').toggleClass('done');
+	$('.content').addClass('done');
 	var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
 	addData(current, temp);
 	setData()
@@ -70,11 +71,13 @@ function goToQuestion(q) {
 	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description, questions[q].values));
 	if (qSlider) {
     var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
-		addData(current, temp);
-		$('#' + current).fadeOut(fadeSpeed, function() {
-			$(this).remove();
-			$('#' + q).fadeIn(fadeSpeed);
-		});
+//TODO
+	// $('input[name=response]:checked').attr('data-response-val');
+	addData(current, temp);
+	$('#' + current).fadeOut(fadeSpeed, function() {
+		$(this).remove();
+		$('#' + q).fadeIn(fadeSpeed);
+	});
 	} else {
 		$('#' + q).fadeIn(fadeSpeed);
 	}
@@ -89,7 +92,7 @@ function goToQuestion(q) {
 }
 
 function getNext(q) {
-	return questions[q].next[$('#' + q + '-radio label.active input').val()];
+	return questions[q].next[$('input[name=response]:checked').val()];
 }
 
 function getPrev(q) {
@@ -102,7 +105,7 @@ function buildQuestion(id, name, description, value) {
             '<p>' + description +'</p>' +
             '<form class="radio-buttons" id="' + id + '-radio">';
     for (var i = 0; i < questions[id].labels.length; i++) {
-    	question += '<div><input type="radio" name="response" id="option' + i + '" value="' + value[i] + '">' + 
+    	question += '<div><input type="radio" name="response" id="option' + i + '" value="' + i + '">' + 
     		'<label for="option' + i + '">' + questions[id].labels[i] + '</label></div>'
 	    // question += '<label class="btn btn-primary radio-btn">' + 
 		   //  '<div class="label"><p>' + questions[id].labels[i] + '</p></div>' +
