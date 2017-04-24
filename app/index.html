@@ -182,8 +182,8 @@
         </div>
         <div class="features">
           <img class="img-circle yellow" src="images/bringpplin.svg">
-          <img class="img-circle purple" src="images/focusonissues.svg">
-          <img class="img-circle blue" src="images/knowyourcomm.svg">
+          <img class="img-circle purple" src="images/knowyourcomm.svg">
+          <img class="img-circle blue" src="images/focusonissues.svg">
           <img class="img-circle green" src="images/talkitup.svg">
         </div>
         <button id="start-button" type="button" class="btn btn-lg btn-primary">Assess Your Foundation</button>
@@ -198,48 +198,160 @@
           <button id="next" type="button" class="btn btn-lg btn-primary">Next</button>
         </div>
       </div>
-      <div class="results">
-        <div class="chart-box col-md-6">
-          <canvas id="myChart"></canvas>
-        </div>
-        <div class="col-md-6">
-          <div class="panel panel-default explanation">
-            <div class="panel-heading">So it looks like you're:</div>
-            <div class="panel-body">
-              <div class="alert alert-success">Community-focused</div>
-              <div class="alert alert-warning">Low-tech</div>
-              <div class="alert alert-info">A bagel</div>
+        <div class="results">
+            <div class="container">
+              <h3>Results</h3>
+                <hr class="my-4">
+            <div class="container">
+                <div class="chart-box col-md-6">
+                  <canvas id="myChart"></canvas>
+                </div>
+                <div class="col-md-6">
+                  <div class="panel panel-default explanation">
+                    <div class="panel-heading">Your Current Foundation:</div>
+                    <div class="panel-body">
+                      <div class="alert alert-success">Socially Focused</div>
+                      <div class="alert alert-danger">Weak Presence</div>
+                      <div class="alert alert-warning">Specialized</div>
+                      <div class="alert alert-success">Good Commmunication</div>
+                    </div>
+                  </div>
+                </div>
             </div>
+
+        <div class="container">
+            <h3>Complete Analysis</h3>
+            <hr class="my-4">
+        </div>
+        <div class="container" style="background-color: #ffe9c9; padding: 15px; border-radius: 4px;">
+            <div class="col-md-2">
+                <img class="img-circle yellow" src="images/bringpplin.svg" style="min-width: 75px; min-height: 75px;">
+            </div>
+            <div class="col-md-10" style="border-color: #edac00;">
+                <h3>Bring People In</h3>
+            </div>
+        </div>
+          <div class="container">
+            <h4>Communication</h4>
+            <div class="panel" id="customPanelExt">
+              <div class="panel" id="customPanelIntBringPeopleIn">
+              </div>
+            </div>
+            <h4>Know your Members</h4>
+            <div class="panel" id="customPanelExt">
+              <div class="panel" id="customPanelIntBringPeopleIn">
+              </div>
+            </div>
+            <h4>Resources for Improvement:</h4>
+            <hr class="my-4">
+            <p>Hark! A thing to do, and <a href="">a link to do it</a></p>
           </div>
-        </div>
-        <div class="col-md-12 going-from-here">
-          <div class="panel panel-default explanation">
-            <div class="panel-heading">
-              <h3 class="panel-title">Where to go from here</h3>
-            </div>
-            <div class="panel-body">
-              <div class="col-md-6">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Building a web presence</div>
-                  <div class="panel-body">
+            <div class="container" style="background-color: #e9e2ff; padding: 15px; border-radius: 4px;">
+                    <div class="col-md-2">
+                      <img class="img-circle purple" src="images/knowyourcomm.svg" style="min-width: 75px; min-height: 75px;">
+                    </div>
+                      <div class="col-md-10" style="border-color: #edac00;">
+                          <h3>Know your Community</h3>
+                    </div>
+                </div>
+<!--            <div class="panel-body">-->
+                  <div class="container">
+                    <h4>Online Presence</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntKnowCommunity">
+                      </div>
+                    </div>
+                    <h4>In-Person Presence</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntKnowCommunity">
+                      </div>
+                    </div>
+                    <h4>Decision-Making</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntKnowCommunity">
+                      </div>
+                    </div>
+                    <h4>Resources for Improvement:</h4>
+                    <hr class="my-4">
+                    <p>Hark! A thing to do, and <a href="">a link to do it</a></p>
+                  </div>
+<!--                </div>-->
+<!--            </div>-->
+            <div class="container" style="background-color: aliceblue; padding: 15px; border-radius: 4px;">
+                        <div class="col-md-2">
+                          <img class="img-circle blue" src="images/focusonissues.svg" style="min-width: 75px; min-height: 75px;">
+                        </div>
+                          <div class="col-md-10" style="border-color: #edac00;">
+                              <h3>Focus on Issues</h3>
+                        </div>
+                    </div>
+                    <div class="container">
+                    <h4>Problem-Solving</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntFocusIssues">
+                      </div>
+                    </div>
+                    <h4>Manpower</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntFocusIssues">
+                      </div>
+                    </div>
+                    <h4>Reap What you Sow</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntFocusIssues">
+                      </div>
+                    </div>
+                    <h4>Public Perspective</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntFocusIssues">
+                      </div>
+                    </div>
+                    <h4>Resources for Improvement:</h4>
+                    <hr class="my-4">
                     <p>Hark! A thing to do, and <a href="">a link to do it</a></p>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Your new life as a bagel</div>
-                  <div class="panel-body">
+<!--            </div>-->
+            <div class="container" style="background-color: #cfffdb; padding: 15px; border-radius: 4px;">
+                        <div class="col-md-2">
+                          <img class="img-circle green" src="images/talkitup.svg" style="min-width: 75px; min-height: 75px;">
+                        </div>
+                          <div class="col-md-10" style="border-color: #edac00;">
+                              <h3>Talk it Up</h3>
+                        </div>
+                    </div>
+                  <div class="container">
+                    <h4>Leadership</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntTalkUp">
+                      </div>
+                    </div>
+                    <h4>Information-Sharing</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntTalkUp">
+                      </div>
+                    </div>
+                    <h4>Media</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntTalkUp">
+                      </div>
+                    </div>
+                    <h4>Improvement</h4>
+                    <div class="panel" id="customPanelExt">
+                      <div class="panel" id="customPanelIntTalkUp">
+                      </div>
+                    </div>
+                    <h4>Resources for Improvement:</h4>
+                    <hr class="my-4">
                     <p>Hark! A thing to do, and <a href="">a link to do it</a></p>
-                    <p>More information! <a href="">Yea!</a></p>
                   </div>
                 </div>
-              </div>
             </div>
+<!--
           </div>
         </div>
-      </div>
-    </div>
+-->
+
 
     <img id="toggle-graph" src="images/arrow-01.svg"></img>
 
