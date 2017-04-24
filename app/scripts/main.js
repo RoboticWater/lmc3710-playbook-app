@@ -44,6 +44,8 @@ $(function() {
 
 function nextQuestion() {
 	var next = getNext();
+	console.log((order.length / 61 * 100) + '%');
+	$('.alt-prog .bar div').css({'width': (order.length / 61 * 100) + '%'});
 	$('#bar-' + current).addClass('done');
 	$.each(getIntermediateQuestions(current, next), function(index, value) {
 		$('#bar-' + value).addClass('done');
@@ -104,7 +106,6 @@ function goToQuestion(q) {
 	$('#' + questions[current].subplay).addClass('active');
 	$('#' + questions[current].group).addClass('active');
 	qSlider = $('#' + current + '-radio');
-
 }
 
 function getNext() {

@@ -182,7 +182,41 @@ body.hide-leftbar {
   }
 }
 
+.alt-prog {
+  display: none;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100vw - 300px);
+  height: 5%;
+  .bar {
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 20%;
+    padding: 0 2%;
+    background: #ccc;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    div {
+      position: absolute;
+      background: $blue;
+      width: 0;
+      height: 100%;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
+  .alt-prog {
+    display: block;
+  }
   .sidebar {
     width: 210px;
     left: -210px;

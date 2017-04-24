@@ -14,8 +14,14 @@ for question in jo:
 
 for k, v in group_totals.items():
     print('"%s": %d,' % (k, v))
-
+    
 print()
 
 for k, v in play_totals.items():
     print('"%s": %d,' % (k, v))
+
+'''
+for question in jo:
+    for nq in jo[question]["next"]:
+        if int(question.replace('q','')) >= int(nq.replace('q','')):
+            print(question, jo[question]["next"])'''
