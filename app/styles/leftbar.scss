@@ -97,33 +97,41 @@ $green: #27da90;
       margin: 2px;
       border-radius: 2px;
       transition: background 0.5s ease;
-      &.done {
-        background: #29f;
-      }
     }
   }
 }
 
-#bring-people-in a {
-  &:hover {
+#bring-people-in {
+  a:hover {
     color: $yellow;
   }
-  &.done {
-    &:hover {
-      color: #fff;
-    }
-    color: $yellow;
+  .bar.done {
+    background: $yellow;
   }
 }
-#know-your-community a:hover {
-  &:hover {
-    color: $purple;
-  }
-  &.done {
+#bring-people-in.done {
+  a {
+    color: $yellow;
     &:hover {
       color: #fff;
     }
+  }
+}
+
+#know-your-community {
+  a:hover {
     color: $purple;
+  }
+  .bar.done {
+    background: $purple;
+  }
+}
+#know-your-community.done {
+  a {
+    color: $purple;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 #focus-on-issues a:hover {

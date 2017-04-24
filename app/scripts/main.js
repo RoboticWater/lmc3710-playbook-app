@@ -19,6 +19,9 @@ var qSlider;
 $(function() {
 	$.getJSON('/resources/questions.json', function(json) {
 		questions = json;
+		$.each(questions, function(index, value) {
+			$('#' + value.group + ' .parts').append('<div class="spacer"><div class="bar" id="bar-' + index + '"></div></div>')
+		});
 	}).fail(function(d, textStatus, error) {
         console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
     });
@@ -40,11 +43,15 @@ $(function() {
 });
 
 function nextQuestion() {
+	var next = getNext();
 	$('#bar-' + current).addClass('done');
-	if (getNext() === 'end') {
+	$.each(getIntermediateQuestions(current, next), function(index, value) {
+		$('#bar-' + value).addClass('done');
+	})
+	if (next === 'end') {
 		goResponses();
 	} else {
-		goToQuestion(getNext());
+		goToQuestion(next);
 		if (!order.includes(current)) order.push(current);
 	}
 }
@@ -198,7 +205,14 @@ function generateSideChart() {
 }
 
 function getIntermediateQuestions(q1, q2) {
-	
+	var grab = false;
+	var out = [];
+	$.each(questions, function(index, value) {
+		if(index === q2) return false;
+		if (grab) out.push(index);
+		if (index === q1) grab = true;
+	});
+	return out;
 }
 
 

@@ -1,0 +1,23 @@
+.results .head {
+  padding: 15px;
+  border-radius: 4px;
+  img {
+    min-width: 75px;
+    min-height: 75px;
+  }
+}
+#bring-results .head {
+  background-color: #ffe9c9;
+}
+
+#know-results .head {
+  background-color: #e9e2ff;
+}
+
+#focus-results .head {
+  background-color: #deebf7;
+}
+
+#talk-results .head {
+  background-color: #cfffdb;
+}
