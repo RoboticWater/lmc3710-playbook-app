@@ -152,15 +152,15 @@ $green: #27da90;
 }
 #talk-it-up {
   a:hover {
-    color: $blue;
+    color: $green;
   }
   .bar.done {
-    background: $blue;
+    background: $green;
   }
 }
 #talk-it-up.done {
   a {
-    color: $blue;
+    color: $green;
     &:hover {
       color: #ddd;
     }
