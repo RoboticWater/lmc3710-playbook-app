@@ -113,7 +113,7 @@ $green: #27da90;
   a {
     color: $yellow;
     &:hover {
-      color: #fff;
+      color: #ddd;
     }
   }
 }
@@ -130,30 +130,40 @@ $green: #27da90;
   a {
     color: $purple;
     &:hover {
-      color: #fff;
+      color: #ddd;
     }
   }
 }
-#focus-on-issues a:hover {
-  &:hover {
+#focus-on-issues {
+  a:hover {
     color: $blue;
   }
-  &.done {
-    &:hover {
-      color: #fff;
-    }
-    color: $blue;
+  .bar.done {
+    background: $blue;
   }
 }
-#talk-it-up a:hover {
-  &:hover {
-    color: $green;
-  }
-  &.done {
+#focus-on-issues.done {
+  a {
+    color: $blue;
     &:hover {
-      color: #fff;
+      color: #ddd;
     }
-    color: $green;
+  }
+}
+#talk-it-up {
+  a:hover {
+    color: $blue;
+  }
+  .bar.done {
+    background: $blue;
+  }
+}
+#talk-it-up.done {
+  a {
+    color: $blue;
+    &:hover {
+      color: #ddd;
+    }
   }
 }
 

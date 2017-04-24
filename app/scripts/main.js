@@ -46,18 +46,18 @@ $(function() {
 
 function nextQuestion() {
 	var next = getNext();
-	console.log((order.length / 61 * 100) + '%');
+	if (next === 'end') {
+		goResponses();
+	}
 	$('.alt-prog .bar div').css({'width': (order.length / 61 * 100) + '%'});
 	$('#bar-' + current).addClass('done');
 	$.each(getIntermediateQuestions(current, next), function(index, value) {
 		$('#bar-' + value).addClass('done');
 	});
-	if (next === 'end') {
-		goResponses();
-	} else {
-		goToQuestion(next);
-		if (!order.includes(current)) order.push(current);
-	}
+	goToQuestion(next);
+	if (!order.includes(current)) order.push(current);
+	// console.log((order.length / 61 * 100) + '%');
+	
 }
 
 function prevQuestion() {
