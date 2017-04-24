@@ -152,6 +152,10 @@ function setData() {
 		  }
 	  }
 	});
+	temparr[0] = Math.ceil((Number(temparr[0])/44)*100);
+	temparr[1] = Math.ceil((Number(temparr[1])/52)*100);
+	temparr[2] = Math.ceil((Number(temparr[2])/80)*100);
+	temparr[3] = Math.ceil((Number(temparr[3])/68)*100);
 	data1 = {
 	    labels: ["Bring People In", "Know your Community", "Focus on Issues", "Talk it Up"],
 	    datasets: [{
@@ -173,7 +177,7 @@ function setData() {
         scale: {
           ticks: {
             beginAtZero : true,
-            max : 80
+            max : 100
            }
         }
        }
