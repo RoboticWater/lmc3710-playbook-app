@@ -35,10 +35,10 @@ $(document).ready(function() {
 
 function nextQuestion() {
 	$('#bar-' + current).addClass('done');
-	if (getNext(current) === 'end') {
+	if (getNext() === 'end') {
 		goResponses();
 	} else {
-		goToQuestion(getNext(current));
+		goToQuestion(getNext());
 		if (!order.includes(current)) order.push(current);
 	}
 }
@@ -47,8 +47,6 @@ function prevQuestion() {
 	if (current ==='q1') {
 		goHome();
 	} else {
-		if (!$('#bar-' + current).hasClass('done'))
-			$('#bar-' + current).toggleClass('done');
 		goToQuestion(getPrev(current))
 	}
 }
@@ -61,19 +59,22 @@ function goHome() {
 function goResults() {
 	$('.intro').addClass('done');
 	$('.content').addClass('done');
-	var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
-	addData(current, temp);
+	addData(current, $('input[name=response]:checked').attr('data-response'));
 	setData()
 }
 
 function goToQuestion(q) {
+	if (resultData[q] === undefined) $('#next').prop('disabled', true);
+	else $('#next').prop('disabled', false);
 	$('.intro').addClass('done');
-	$('.questions').append(buildQuestion(q, questions[q].name, questions[q].description, questions[q].values));
+	$('.content').removeClass('done');
+	$('.questions').append(buildQuestion(q));
+	$('input[type=radio][name=response]').change(function() {
+		addData(current, $('input[name=response]:checked').attr('data-response'));
+		$('#next').prop('disabled', false);        
+    });
 	if (qSlider) {
-    var temp = parseInt($('#' + current + '-radio label.active input').val()) + 1;
-//TODO
-	// $('input[name=response]:checked').attr('data-response-val');
-	addData(current, temp);
+	addData(current, $('input[name=response]:checked').attr('data-response'));
 	$('#' + current).fadeOut(fadeSpeed, function() {
 		$(this).remove();
 		$('#' + q).fadeIn(fadeSpeed);
@@ -91,25 +92,25 @@ function goToQuestion(q) {
 
 }
 
-function getNext(q) {
-	return questions[q].next[$('input[name=response]:checked').val()];
+function getNext() {
+	return $('input[name=response]:checked').val();
 }
 
 function getPrev(q) {
 	return order[order.indexOf(q) - 1];
 }
 
-function buildQuestion(id, name, description, value) {
+function buildQuestion(id) {
+	var q = questions[id];
 	var question = '<article class="question row current" id="' + id + '">' + 
-            '<h1>' + name + '</h1>' +
-            '<p>' + description +'</p>' +
+            '<h1>' + q.name + '</h1>' +
+            '<p>' + q.description +'</p>' +
             '<form class="radio-buttons" id="' + id + '-radio">';
-    for (var i = 0; i < questions[id].labels.length; i++) {
-    	question += '<div><input type="radio" name="response" id="option' + i + '" value="' + i + '">' + 
-    		'<label for="option' + i + '">' + questions[id].labels[i] + '</label></div>'
-	    // question += '<label class="btn btn-primary radio-btn">' + 
-		   //  '<div class="label"><p>' + questions[id].labels[i] + '</p></div>' +
-		   //  '<input type="radio" name="options" id="option1" value=' + i + '></label>';
+    for (var i = 0; i < q.labels.length; i++) {
+    	var checked = parseInt(resultData[id]) === q.values[i] ? 'checked="checked"' : '';
+    	question += '<div><input type="radio"' + checked + 'name="response" data-response="' +
+    		q.values[i] + '" id="option' + i + '" value="' + q.next[i] + '">' + 
+    		'<label for="option' + i + '">' + q.labels[i] + '</label></div>'
   	}
   	question += '</form></article>';
   	return question;
@@ -190,7 +191,7 @@ function generateSideChart() {
 
 
 function addData(q, y) {
-  resultData[q] = y;
+	resultData[q] = y;
 }
 
 

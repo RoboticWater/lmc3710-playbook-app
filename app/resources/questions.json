@@ -4,7 +4,7 @@
 		"description": "Example description 1", "group": "communication", "subplay": "bring-people-in",
 		"next":["q2","q2","q2","q2","q3"],
 		"labels":["Very Unsatisfied","Unsatisfied","Neutral","Satisfied","Very Satisfied"],
-		"values": {"tech":[0,0,2,4,5], "communication":[0,1,2,3,4]}
+		"values": [0,1,2,3,4]
 	},
 
 	"q2":{
