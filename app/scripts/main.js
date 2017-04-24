@@ -3,6 +3,7 @@ var current = "q1";
 var questions;
 var totals;
 var resultData = {};
+var groupData = {};
 
 var fadeSpeed = 250;
 
@@ -49,7 +50,7 @@ function nextQuestion() {
 	$('#bar-' + current).addClass('done');
 	$.each(getIntermediateQuestions(current, next), function(index, value) {
 		$('#bar-' + value).addClass('done');
-	})
+	});
 	if (next === 'end') {
 		goResponses();
 	} else {
@@ -234,7 +235,13 @@ function getIntermediateQuestions(q1, q2) {
 
 
 function addData(q, y) {
-	resultData[q] = y;
+	resultData[q] = parseInt(y);
+	groupData = {};
+	$.each(resultData, function(index, value) {
+		if (!groupData[questions[index].group]) groupData[questions[index].group] = value;
+		else groupData[questions[index].group] += value;
+	});
+	console.log(groupData);
 }
 
 
