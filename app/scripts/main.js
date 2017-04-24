@@ -91,6 +91,7 @@ function goToQuestion(q) {
     });
 	if (qSlider) {
 	addData(current, $('input[name=response]:checked').attr('data-response'));
+	generateSideChart();
 	$('#' + current).fadeOut(fadeSpeed, function() {
 		$(this).remove();
 		$('#' + q).fadeIn(fadeSpeed);
@@ -190,9 +191,25 @@ function setData() {
 function generateSideChart() {
 	ctx = document.getElementById('sideChart').getContext('2d');
 	var arr = []
+	var temparr = [0,0,0,0]
 	jQuery.each(resultData, function(i, val) {
 	  arr.push(val);
+	  if (val != undefined) {
+		  if (questions[i].subplay == "bring-people-in") {
+		  	temparr[0] = Number(temparr[0]) + Number(val);
+		  } else if (questions[i].subplay == "know-your-community") {
+		  	temparr[1] = Number(temparr[1]) + Number(val);
+		  } else if (questions[i].subplay == "focus-on-issues") {
+		  	temparr[2] = Number(temparr[2]) + Number(val);
+		  } else if (questions[i].subplay == "talk-it-up") {
+		  	temparr[3] = Number(temparr[3]) + Number(val);
+		  }
+	  }
 	});
+	temparr[0] = Math.ceil((Number(temparr[0])/44)*100);
+	temparr[1] = Math.ceil((Number(temparr[1])/52)*100);
+	temparr[2] = Math.ceil((Number(temparr[2])/80)*100);
+	temparr[3] = Math.ceil((Number(temparr[3])/68)*100);
 	data1 = {
 	    labels: ["Bring People In", "Know your Community", "Focus on Issues", "Talk it Up"],
 	    datasets: [{
@@ -203,7 +220,7 @@ function generateSideChart() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: arr
+	            data: temparr
 	        }
 	    ]
 	};
@@ -214,7 +231,7 @@ function generateSideChart() {
         scale: {
           ticks: {
             beginAtZero : true,
-            max : 5
+            max : 100
           }
         }
       }
