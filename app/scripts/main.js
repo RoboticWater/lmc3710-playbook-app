@@ -241,7 +241,12 @@ function addData(q, y) {
 		if (!groupData[questions[index].group]) groupData[questions[index].group] = value;
 		else groupData[questions[index].group] += value;
 	});
-	console.log(groupData);
+	console.log(totals);
+	$.each(groupData, function(index, value) {
+		// console.log(index, totals.group[index], value);
+		// console.log((value / totals.group[index]  * 100) + '%');
+		$('#' + index + '-prog div').css({'width': (value / totals.group[index] * 100) + '%'})
+	});
 }
 
 

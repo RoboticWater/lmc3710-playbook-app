@@ -60,6 +60,7 @@
 
 .results {
   height: 100vh;
+  width: 100%;
   padding-top: 30px;
   .alert {
     margin: 0;
@@ -68,6 +69,11 @@
     margin-top: 20px;
   }
   overflow-y: scroll;
+  .container {
+    padding: 0;
+    margin: 0;
+    
+  }
 }
 
 .question {
