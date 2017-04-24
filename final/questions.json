@@ -1,0 +1,501 @@
+{
+	"q1":{
+		"name":"Question One",
+		"description": "How well does your organization understand current community concerns?", "group": "communication", "subplay": "bring-people-in",
+		"next":["q2","q2","q2","q2","q3"],
+		"labels":["Not at All","A Little","Neutral","Mostly","Completely"],
+		"values":[0,1,2,3,4]
+	},
+	"q2":{"name":"Question Two",
+		"description": "How often does your organization have one-on-one conversations with members it wishes to recruit?", "group": "communication", "subplay": "bring-people-in",
+		"next":["q3","q3","q3","q3","q3"],
+		"labels":["Never","Once","Occasionally","Often"," Very Often"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q3":{
+		"name":"Question Three",
+		"description": "Does your organization have multiple methods of contacting prospective members?", "group": "communication", "subplay": "bring-people-in",
+		"next":["q4","q4","q4","q4","q4"],
+		"labels":["No Methods","One/Two Methods","A Few Methods","Moderate Methods", "Multiple Methods"],
+		"values":[0,1,2,3,4]
+	},
+	"q4":{
+		"name":"Question Four",
+		"description": "How clearly do prospective members understand the benefits of working with your group and how it will help them solve problems that affect them?", "group": "communication", "subplay": "bring-people-in",
+		"next":["q5","q5","q5","q5","q5"],
+		"labels":["Not Clearly","A Little Clearly","Moderately Clearly","Clearly","Very Clearly"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q5":{
+		"name":"Question Five",
+		"description": "How well do you keep in mind why members join your organization and plan conversations, events, and future projects accordingly?", "group": "communication", "subplay": "bring-people-in",
+		"next":["q6","q6","q6","q6","q6"],
+		"labels":["Don't Keep in Mind","Rarely Keeps in Mind","Sometimes Keeps in Mind","Frequently Keeps in Mind","Always Keep in Mind"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q6":{
+		"name":"Question Six",
+		"description": "How well do you align with common public causes?", "group": "know-your-members", "subplay": "bring-people-in",
+		"next":["q7","q7","q7","q7","q7"],
+		"labels":["Don't Align","Align a Little","Somewhat Align","Mostly Aligns","Align Well"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q7":{
+		"name":"Question Seven",
+		"description": "Do you resolve issues that benefit or would otherwise harm your community?", "group": "know-your-members", "subplay": "bring-people-in",
+		"next":["q8","q8","q8","q8","q8"],
+		"labels":["Don't Resolve","Resolve a Little","Resolve Somewhat","Resolve Mostly","Resolve Completely"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q8":{
+		"name":"Question Eight",
+		"description": "Do you achieve results?", "group": "know-your-members", "subplay": "bring-people-in",
+		"next":["q9","q9","q9","q9","q9"],
+		"labels":["No Results","Little Results","Moderate Results","Good Results","Great Results"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q9":{
+		"name":"Question Nine",
+		"description": "Do you bring people together under a common vision?", "group": "know-your-members", "subplay": "bring-people-in",
+		"next":["q10","q10","q10","q10","q10"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q10":{
+		"name":"Question Ten",
+		"description": "Do you help people develop new skills?", "group": "know-your-members", "subplay": "bring-people-in",
+		"next":["q11","q11","q11","q11","q11"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q11":{
+		"name":"Question Eleven",
+		"description": "How much mutual respect and trust do your members have for each other?", "group": "know-your-members", "subplay": "bring-people-in",
+		"next":["q12","q12","q12","q12","q12"],
+		"labels":["None","Little", "Moderate", "Good", "Great"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q12":{
+		"name":"Question Twelve",
+		"description": "How much of an online-presence does your organization have?", "group": "online-presence", "subplay": "know-your-community",
+		"next":["q17","q13","q13","q13","q13"],
+		"labels":["No Presence","Little Presence","Moderate Presence","Good Presence","High Presence"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q13":{
+		"name":"Question Thirteen",
+		"description": "Does your organization have a website?", "group": "online-presence", "subplay": "know-your-community",
+		"next":["q14","q14"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q14":{
+		"name":"Question Fourteen",
+		"description": "How often is your organization’s website updated?", "group": "online-presence", "subplay": "know-your-community",
+		"next":["q15","q15","q15","q15","q15"],
+		"labels":["Never","Once","Sometimes","Somewhat often","Frequently"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q15":{
+		"name":"Question Fifteen",
+		"description": "Does your organization have any social media accounts?", "group": "online-presence", "subplay": "know-your-community",
+		"next":["q16","q16"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+	"q16":{
+		"name":"Question Sixteen",
+		"description": "How often is your organization’s social media updated?", "group": "online-presence", "subplay": "know-your-community",
+		"next":["q17","q17","q17","q17","q17"],
+		"labels":["Never","Once","Sometimes","Somewhat often","Frequently"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q17":{
+		"name":"Question Seventeen",
+		"description": "How much of an in presence does your organization have?", "group": "in-person-presence", "subplay": "know-your-community",
+		"next":["q20","q18","q18","q18","q18"],
+		"labels":["No Presence","Little Presence","Moderate Presence","Good Presence","High Presence"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q18":{
+		"name":"Question Eighteen",
+		"description": "How often does your organization talk to members in your community in person?", "group": "in-person-presence", "subplay": "know-your-community",
+		"next":["q19","q19","q19","q19","q19"],
+		"labels":["Never","Once","Sometimes","Somewhat often","Frequently"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q19":{
+		"name":"Question Nineteen",
+		"description": "How much of an effort does your organization put in to get to know the members in your community?", "group": "in-person-presence", "subplay": "know-your-community",
+		"next":["q20","q20","q20","q20","q20"],
+		"labels":["No Effort","Little Effort","Some Effort","Effort","Lot of Effort"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q20":{
+		"name":"Question Twenty",
+		"description": "Does your organization hold any events or meetings to hear the issues/concerns in your community?", "group": "in-person-presence", "subplay": "know-your-community",
+		"next":["q22","q21"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q21":{
+		"name":"Question Twenty-one",
+		"description": "How well does your organization handle the input from the community?", "group": "in-person-presence", "subplay": "know-your-community",
+		"next":["q22","q22","q22","q22","q22"],
+		"labels":["Doesn't Handle","Somewhat Handles","Handles Alright","Handles Well","Handles Really Well"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q22":{
+		"name":"Question Twenty-two",
+		"description": "Does your organization have any meetings to decide on how to handle issues that come up from the community?", "group": "decision-making", "subplay": "know-your-community",
+		"next":["q23","q24"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q23":{
+		"name":"Question Twenty-three",
+		"description": "Is there a system to handle how decisions are made?", "group": "decision-making", "subplay": "know-your-community",
+		"next":["q24","q24"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+	"q24":{
+		"name":"Question Twenty-four",
+		"description": "How well is your current system of decision making working?", "group": "decision-making", "subplay": "know-your-community",
+		"next":["q25","q25","q25","q25","q25"],
+		"labels":["Not Working","Somewhat Works","Works Alright","Works well","Works great"],
+		"values":[0,1,2,3,4]
+	},
+
+	"q25":{
+		"name":"Question Twenty-Five",
+		"description": "Does your organization tend to solve individual problems or organize similar problems into larger issues with deadlines and goals before solving those issues?", "group": "problem-solving", "subplay": "focus-on-issues",
+		"next":["q26","q26"],
+		"labels":["Individual Problems","Larger Issues"],
+		"values":[0,4]
+	},
+
+	"q26":{
+		"name":"Question Twenty-six",
+		"description": "Do your solutions benefit a small or wide range of people in your community?", "group": "problem-solving", "subplay": "focus-on-issues",
+		"next":["q27","q27","q27","q27","q27"],
+		"labels":["Small","Medium","Wide"],
+		"values":[0,2,4]
+	},
+
+	"q27":{
+		"name":"Question Twenty-seven",
+		"description": "Do your solutions improve lives?", "group": "problem-solving", "subplay": "focus-on-issues",
+		"next":["q29","q28"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q28":{
+		"name":"Question Twenty-eight",
+		"description": "Do you improve few or many lives?", "group": "problem-solving", "subplay": "focus-on-issues",
+		"next":["q29","q29","q29"],
+		"labels":["Few","Medium","Many"],
+		"values":[0,2,4]
+	},
+
+	"q29":{
+		"name":"Question Twenty-nine",
+		"description": "Does your organization have few or many members?", "group": "man-power", "subplay": "focus-on-issues",
+		"next":["q30","q30","q30","q30","q30"],
+		"labels":["Few","Medium","Many"],
+		"values":[0,2,4]
+	},
+
+
+	"q30":{
+		"name":"Question Thirty",
+		"description": "Does your organization get new people involved with your organization while solving issues?", "group": "man-power", "subplay": "focus-on-issues",
+		"next":["q34","q31"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q31":{
+		"name":"Question Thirty-one",
+		"description": "Do you tend to retain these new people as members of your organization after the issues is solved? ", "group": "man-power", "subplay": "focus-on-issues",
+		"next":["q32","q32","q32"],
+		"labels":["Rarely","Sometimes","often"],
+		"values":[0,2,4]
+	},
+	"q32":{
+		"name":"Question Thirty-two",
+		"description": "Do your organization’s members work cohesively or separately?", "group": "man-power", "subplay": "focus-on-issues",
+		"next":["q33","q33"],
+		"labels":["Separately","Cohesively"],
+		"values":[0,4]
+	},
+
+
+	"q33":{
+		"name":"Question Thirty-three",
+		"description": "How many of new people become leaders in your organization?", "group": "man-power", "subplay": "focus-on-issues",
+		"next":["q34","q34","q34"],
+		"labels":["Few","some","Many"],
+		"values":[0,2,4]
+	},
+
+	"q34":{
+		"name":"Question Thirty-four",
+		"description": "Does your organization acquire money through problem-solving? ", "group": "reap-what-you-sow", "subplay": "focus-on-issues",
+		"next":["q35","q36"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q35":{
+		"name":"Question Thirty-five",
+		"description": "Does your organization need money to get its work done?", "group": "reap-what-you-sow", "subplay": "focus-on-issues",
+		"next":["q37","q36"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q36":{
+		"name":"Question Thirty-six",
+		"description": "Is your money distributed into many or few projects and issues your organization is working on?", "group": "reap-what-you-sow", "subplay": "focus-on-issues",
+		"next":["q37","q37","q37"],
+		"labels":["Few","Some","Many"],
+		"values":[0,2,4]
+	},
+
+
+	"q37":{
+		"name":"Question Thirty-seven",
+		"description": "Does your organization acquire resources (not including money or manpower) throughproblem-solving?", "group": "reap-what-you-sow", "subplay": "focus-on-issues",
+		"next":["q38","q39"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q38":{
+		"name":"Question Thirty-eight",
+		"description": "Does your organization require resources to get its work done?", "group": "reap-what-you-sow", "subplay": "focus-on-issues",
+		"next":["q40","q39"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q39":{
+		"name":"Question Thirty-nine",
+		"description": "Are your resources distributed into many or few projects and issues your organization is working on?", "group": "reap-what-you-sow", "subplay": "focus-on-issues",
+		"next":["q40","q40","q40"],
+		"labels":["Few","Some","Many"],
+		"values":[0,2,4]
+	},
+
+	"q40":{
+		"name":"Question Forty",
+		"description": "Are your issues and solutions to these issues easily explainable to the public?", "group": "public-perspective", "subplay": "focus-on-issues",
+		"next":["q41","q41","q41"],
+		"labels":["Hard","Medium","Easy"],
+		"values":[0,2,4]
+	},
+
+
+	"q41":{
+		"name":"Question Forty-one",
+		"description": "Do you have regular communication with the public about what your problem-solving?", "group": "public-perspective", "subplay": "focus-on-issues",
+		"next":["q42","q42","q42"],
+		"labels":["Rarely","Sometimes","Regularly"],
+		"values":[0,2,4]
+	},
+
+
+	"q42":{
+		"name":"Question Forty-two",
+		"description": "Does your organization have specified visions and values?", "group": "public-perspective", "subplay": "focus-on-issues",
+		"next":["q45","q43"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q43":{
+		"name":"Question Forty-three",
+		"description": "Does your organization have specific or broad visions and values? ", "group": "public-perspective", "subplay": "focus-on-issues",
+		"next":["q44","q44"],
+		"labels":["Specific","Broad"],
+		"values":[0,4]
+	},
+
+	"q44":{
+		"name":"Question Forty-four",
+		"description": "Do the issues you solve reflect only your organization’s visions and values?", "group": "public-perspective", "subplay": "focus-on-issues",
+		"next":["q45","q45","q45"],
+		"labels":["Always","Sometimes","Rarely"],
+		"values":[0,2,4]
+	},
+
+	"q45":{
+		"name":"Question Forty-five",
+		"description": "Do you have designated roles for specific members of your organization?", "group": "leadership", "subplay": "talk-it-up",
+		"next":["q48","q46"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q46":{
+		"name":"Question Forty-six",
+		"description": "Do you have a member responsible for information-gathering and keeping track of what your organization does (i.e. a secretary)?", "group": "leadership", "subplay": "talk-it-up",
+		"next":["q48","q47"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q47":{
+		"name":"Question Forty-seven",
+		"description": "Do you have multiple members for information-gathering to avoid burnout?", "group": "leadership", "subplay": "talk-it-up",
+		"next":["q48","q48"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q48":{
+		"name":"Question Forty-eight",
+		"description": "Are your organization’s notes shared within your community?", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q51","q49"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q49":{
+		"name":"Question Forty-nine",
+		"description": "Is information distributed along the proper channels for the most people in your organization to see it?", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q50","q50"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q50":{
+		"name":"Question Fifty",
+		"description": "Is this information sent out quickly?", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q51","q51"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q51":{
+		"name":"Question Fifty-one",
+		"description": "Are your notes shared outside your community? ", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q54","q52"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q52":{
+		"name":"Question Fifty-two",
+		"description": "Is information distributed along the proper channels for the most people outside your organization to see it?", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q53","q53"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q53":{
+		"name":"Question Fifty-three",
+		"description": "Is this information sent out quickly?", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q54","q54"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q54":{
+		"name":"Question Fifty-four",
+		"description": "Do you frequently share your successful work with the community?", "group": "information-sharing", "subplay": "talk-it-up",
+		"next":["q55","q55"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q55":{
+		"name":"Question Fifty-five",
+		"description": "Does your organization regularly communicate internally and externally by word of mouth?", "group": "media", "subplay": "talk-it-up",
+		"next":["q56","q56"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q56":{
+		"name":"Question Fifty-six",
+		"description": "Does your organization regularly communicate internally and externally through written communication?", "group": "media", "subplay": "talk-it-up",
+		"next":["q57","q57"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+
+	"q57":{
+		"name":"Question Fifty-seven",
+		"description": "Does your organization regularly communicate internally and externally using social media and other technological forms of communication?", "group": "media", "subplay": "talk-it-up",
+		"next":["q58","q58"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q58":{
+		"name":"Question Fifty-eight",
+		"description": "Does the information you wish to spread get to the right people?", "group": "media", "subplay": "talk-it-up",
+		"next":["q59","q59"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q59":{
+		"name":"Question Fifty-nine",
+		"description": "Do you share your groups struggles/failures to meet goals with the public?", "group": "improvement", "subplay": "talk-it-up",
+		"next":["q60","q60"],
+		"labels":["Communicative","Semi-Communivative","Non-Communicative"],
+		"values":[0,2,4]
+	},
+
+
+	"q60":{
+		"name":"Question Sixty",
+		"description": "Do you regularly assess your organization’s results?", "group": "improvement", "subplay": "talk-it-up",
+		"next":["q61","q61"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	},
+
+	"q61":{
+		"name":"Question Sixty-one",
+		"description": "Do you frequently ask for feedback from the community?", "group": "improvement", "subplay": "talk-it-up",
+		"next":["end","end"],
+		"labels":["No","Yes"],
+		"values":[0,4]
+	}
+}

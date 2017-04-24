@@ -1,0 +1,23 @@
+{
+	"group": {
+		"communication": 20,
+		"know-your-members": 24,
+		"online-presence": 20,
+		"in-person-presence": 20,
+		"decision-making": 12,
+		"problem-solving": 16,
+		"man-power": 20,
+		"reap-what-you-sow": 24,
+		"public-perspective": 20,
+		"leadership": 12,
+		"information-sharing": 28,
+		"media": 16,
+		"improvement": 12
+	},
+	"subplay": {
+		"bring-people-in": 44,
+		"know-your-community": 52,
+		"focus-on-issues": 80,
+		"talk-it-up": 68
+	}
+}
