@@ -274,6 +274,7 @@ function addData(q, y) {
 		$('#' + index + '-prog div').css({'width': (value / totals.group[index] * 100) + '%'});
 	});
 	$.each(playData, function(index, value) {
+		console.log(index, value);
 		if(value / totals.subplay[index] < 0.3) $('#qualititave').append(alerts[index][0]);
 		else if(value / totals.subplay[index] < 0.6) $('#qualititave').append(alerts[index][1]);
 		else $('#qualititave').append(alerts[index][2]);
