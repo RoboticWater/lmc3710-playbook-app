@@ -213,7 +213,7 @@
 	"q28":{
 		"name":"Question Twenty-eight",
 		"description": "Do you improve few or many lives?", "group": "problem-solving", "subplay": "focus-on-issues",
-		"next":["q29","q29"],
+		"next":["q29","q29","q29"],
 		"labels":["Few","Medium","Many"],
 		"values":[0,2,4]
 	},
