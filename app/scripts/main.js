@@ -1,5 +1,5 @@
-var order = ["q1"];
-var current = "q1";
+var order = ['q1'];
+var current = 'q1';
 var questions;
 var totals;
 var resultData = {};
@@ -145,13 +145,13 @@ function setData() {
 	jQuery.each(resultData, function(i, val) {
 	  arr.push(val);
 	  if (val != undefined) {
-		  if (questions[i].subplay == "bring-people-in") {
+		  if (questions[i].subplay == 'bring-people-in') {
 		  	temparr[0] = Number(temparr[0]) + Number(val);
-		  } else if (questions[i].subplay == "know-your-community") {
+		  } else if (questions[i].subplay == 'know-your-community') {
 		  	temparr[1] = Number(temparr[1]) + Number(val);
-		  } else if (questions[i].subplay == "focus-on-issues") {
+		  } else if (questions[i].subplay == 'focus-on-issues') {
 		  	temparr[2] = Number(temparr[2]) + Number(val);
-		  } else if (questions[i].subplay == "talk-it-up") {
+		  } else if (questions[i].subplay == 'talk-it-up') {
 		  	temparr[3] = Number(temparr[3]) + Number(val);
 		  }
 	  }
@@ -161,15 +161,15 @@ function setData() {
 	temparr[2] = Math.ceil((Number(temparr[2])/80)*100);
 	temparr[3] = Math.ceil((Number(temparr[3])/68)*100);
 	data1 = {
-	    labels: ["Bring People In", "Know your Community", "Focus on Issues", "Talk it Up"],
+	    labels: ['Bring People In', 'Know your Community', 'Focus on Issues', 'Talk it Up'],
 	    datasets: [{
-	            label: "Results data",
-	            backgroundColor: "rgba(179,181,198,0.2)",
-	            borderColor: "rgba(179,181,198,1)",
-	            pointBackgroundColor: "rgba(179,181,198,1)",
-	            pointBorderColor: "#fff",
-	            pointHoverBackgroundColor: "#fff",
-	            pointHoverBorderColor: "rgba(179,181,198,1)",
+	            label: 'Results data',
+	            backgroundColor: 'rgba(179,181,198,0.2)',
+	            borderColor: 'rgba(179,181,198,1)',
+	            pointBackgroundColor: 'rgba(179,181,198,1)',
+	            pointBorderColor: '#fff',
+	            pointHoverBackgroundColor: '#fff',
+	            pointHoverBorderColor: 'rgba(179,181,198,1)',
 	            data: temparr
 	        }
 	    ]
@@ -197,13 +197,13 @@ function generateSideChart() {
 	jQuery.each(resultData, function(i, val) {
 	  arr.push(val);
 	  if (val != undefined) {
-		  if (questions[i].subplay == "bring-people-in") {
+		  if (questions[i].subplay == 'bring-people-in') {
 		  	temparr[0] = Number(temparr[0]) + Number(val);
-		  } else if (questions[i].subplay == "know-your-community") {
+		  } else if (questions[i].subplay == 'know-your-community') {
 		  	temparr[1] = Number(temparr[1]) + Number(val);
-		  } else if (questions[i].subplay == "focus-on-issues") {
+		  } else if (questions[i].subplay == 'focus-on-issues') {
 		  	temparr[2] = Number(temparr[2]) + Number(val);
-		  } else if (questions[i].subplay == "talk-it-up") {
+		  } else if (questions[i].subplay == 'talk-it-up') {
 		  	temparr[3] = Number(temparr[3]) + Number(val);
 		  }
 	  }
@@ -213,15 +213,15 @@ function generateSideChart() {
 	temparr[2] = Math.ceil((Number(temparr[2])/80)*100);
 	temparr[3] = Math.ceil((Number(temparr[3])/68)*100);
 	data1 = {
-	    labels: ["Bring People In", "Know your Community", "Focus on Issues", "Talk it Up"],
+	    labels: ['Bring People In', 'Know your Community', 'Focus on Issues', 'Talk it Up'],
 	    datasets: [{
-	            label: "Results data",
-	            backgroundColor: "rgba(179,181,198,0.2)",
-	            borderColor: "rgba(179,181,198,1)",
-	            pointBackgroundColor: "rgba(179,181,198,1)",
-	            pointBorderColor: "#fff",
-	            pointHoverBackgroundColor: "#fff",
-	            pointHoverBorderColor: "rgba(179,181,198,1)",
+	            label: 'Results data',
+	            backgroundColor: 'rgba(179,181,198,0.2)',
+	            borderColor: 'rgba(179,181,198,1)',
+	            pointBackgroundColor: 'rgba(179,181,198,1)',
+	            pointBorderColor: '#fff',
+	            pointHoverBackgroundColor: '#fff',
+	            pointHoverBorderColor: 'rgba(179,181,198,1)',
 	            data: temparr
 	        }
 	    ]
@@ -253,10 +253,10 @@ function getIntermediateQuestions(q1, q2) {
 	return out;
 }
 
-var alerts = {"bring-people-in":['<div class="alert alert-danger">Socially Unfocused</div>','<div class="alert alert-success">Socially Focused</div>','<div class="alert alert-success">Very Socially Focused</div>'],
-"know-your-community":['<div class="alert alert-danger">Weak Presence</div>','<div class="alert alert-warning">Fairly Strong Presence</div>', ,'<div class="alert alert-success">Strong Presence</div>'],
-"focus-on-issues":['<div class="alert alert-warning">Specialized</div>','<div class="alert alert-success">Balanced</div>','<div class="alert alert-success">Far Reaching</div>'],
-"talk-it-up":['<div class="alert alert-danger">Poor Communication</div>','<div class="alert alert-warning">Good Communicaiton</div>','<div class="alert alert-success">Great Communicaiton</div>']}
+var alerts = {'bring-people-in':['<div class="alert alert-danger">Socially Unfocused</div>','<div class="alert alert-success">Socially Focused</div>','<div class="alert alert-success">Very Socially Focused</div>'],
+'know-your-community':['<div class="alert alert-danger">Weak Presence</div>','<div class="alert alert-warning">Fairly Strong Presence</div>', ,'<div class="alert alert-success">Strong Presence</div>'],
+'focus-on-issues':['<div class="alert alert-warning">Specialized</div>','<div class="alert alert-success">Balanced</div>','<div class="alert alert-success">Far Reaching</div>'],
+'talk-it-up':['<div class="alert alert-danger">Poor Communication</div>','<div class="alert alert-warning">Good Communicaiton</div>','<div class="alert alert-success">Great Communicaiton</div>']}
 
 function addData(q, y) {
 	resultData[q] = parseInt(y);
