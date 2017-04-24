@@ -4,6 +4,7 @@ var questions;
 var totals;
 var resultData = {};
 var groupData = {};
+var playData = {};
 
 var fadeSpeed = 250;
 
@@ -179,6 +180,7 @@ function setData() {
 	    options: {
         scale: {
           ticks: {
+          	display: false,
             beginAtZero : true,
             max : 100
            }
@@ -230,6 +232,7 @@ function generateSideChart() {
 	    options: {
         scale: {
           ticks: {
+          	display: false,
             beginAtZero : true,
             max : 100
           }
@@ -250,19 +253,30 @@ function getIntermediateQuestions(q1, q2) {
 	return out;
 }
 
+var alerts = {"bring-people-in":['<div class="alert alert-danger">Socially Unfocused</div>','<div class="alert alert-success">Socially Focused</div>','<div class="alert alert-success">Very Socially Focused</div>'],
+"know-your-community":['<div class="alert alert-danger">Weak Presence</div>','<div class="alert alert-warning">Fairly Strong Presence</div>', ,'<div class="alert alert-success">Strong Presence</div>'],
+"focus-on-issues":['<div class="alert alert-warning">Specialized</div>','<div class="alert alert-success">Balanced</div>','<div class="alert alert-success">Far Reaching</div>'],
+"talk-it-up":['<div class="alert alert-danger">Poor Communication</div>','<div class="alert alert-warning">Good Communicaiton</div>','<div class="alert alert-success">Great Communicaiton</div>']}
 
 function addData(q, y) {
 	resultData[q] = parseInt(y);
 	groupData = {};
+	playData = {};
 	$.each(resultData, function(index, value) {
 		if (!groupData[questions[index].group]) groupData[questions[index].group] = value;
 		else groupData[questions[index].group] += value;
+		if (!playData[questions[index].subplay]) playData[questions[index].subplay] = value;
+		else playData[questions[index].subplay] += value;
 	});
-	console.log(totals);
+	// console.log(totals);
+	$('#qualititave').empty();
 	$.each(groupData, function(index, value) {
-		// console.log(index, totals.group[index], value);
-		// console.log((value / totals.group[index]  * 100) + '%');
-		$('#' + index + '-prog div').css({'width': (value / totals.group[index] * 100) + '%'})
+		$('#' + index + '-prog div').css({'width': (value / totals.group[index] * 100) + '%'});
+	});
+	$.each(playData, function(index, value) {
+		if(value / totals.subplay[index] < 0.3) $('#qualititave').append(alerts[index][0]);
+		else if(value / totals.subplay[index] < 0.6) $('#qualititave').append(alerts[index][1]);
+		else $('#qualititave').append(alerts[index][2]);
 	});
 }
 
