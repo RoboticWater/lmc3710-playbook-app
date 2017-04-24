@@ -137,11 +137,23 @@ var myChart;
 function setData() {
 	ctx = document.getElementById('myChart').getContext('2d');
 	var arr = []
+	var temparr = [0,0,0,0]
 	jQuery.each(resultData, function(i, val) {
 	  arr.push(val);
+	  if (val != undefined) {
+		  if (questions[i].subplay == "bring-people-in") {
+		  	temparr[0] = Number(temparr[0]) + Number(val);
+		  } else if (questions[i].subplay == "know-your-community") {
+		  	temparr[1] = Number(temparr[1]) + Number(val);
+		  } else if (questions[i].subplay == "focus-on-issues") {
+		  	temparr[2] = Number(temparr[2]) + Number(val);
+		  } else if (questions[i].subplay == "talk-it-up") {
+		  	temparr[3] = Number(temparr[3]) + Number(val);
+		  }
+	  }
 	});
 	data1 = {
-	    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4"],
+	    labels: ["Bring People In", "Know your Community", "Focus on Issues", "Talk it Up"],
 	    datasets: [{
 	            label: "Results data",
 	            backgroundColor: "rgba(179,181,198,0.2)",
@@ -150,7 +162,7 @@ function setData() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: arr
+	            data: temparr
 	        }
 	    ]
 	};
@@ -161,7 +173,7 @@ function setData() {
         scale: {
           ticks: {
             beginAtZero : true,
-            max : 5
+            max : 80
            }
         }
        }
@@ -176,7 +188,7 @@ function generateSideChart() {
 	  arr.push(val);
 	});
 	data1 = {
-	    labels: ["Cat 1", "Cat 2", "Cat 3", "Cat 4"],
+	    labels: ["Bring People In", "Know your Community", "Focus on Issues", "Talk it Up"],
 	    datasets: [{
 	            label: "Results data",
 	            backgroundColor: "rgba(179,181,198,0.2)",
@@ -185,7 +197,7 @@ function generateSideChart() {
 	            pointBorderColor: "#fff",
 	            pointHoverBackgroundColor: "#fff",
 	            pointHoverBorderColor: "rgba(179,181,198,1)",
-	            data: [2,4,3,2]
+	            data: arr
 	        }
 	    ]
 	};
