@@ -1,0 +1,65 @@
+#rightColumn {
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  display: block;
+  padding: 20px;
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 300px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+#toggle-graph {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  z-index: 5000;
+  top: 10px;
+  right: 300px;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+  transition: right 0.3s ease;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+body.hide-rightbar {
+  #toggle-graph {
+    right: 10px;
+    transform: rotate(0deg);
+  }
+  #rightColumn {
+    right: -300px;
+  }
+}
+
+@media (max-width: 1100px) {
+  #toggle-graph {
+    right: 10px;
+    transform: rotate(0deg);
+  }
+  #rightColumn {
+    right: -300px;
+  }
+  body.hide-rightbar {
+    #toggle-graph {
+      right: 310px;
+      transform: rotate(180deg);
+    }
+    #rightColumn {
+      right: 0;
+      box-shadow: 2px 2px 25px 6px rgba(0,0,0,0.15);
+    }
+  }
+}
+
+#results-now {
+  margin: 10px 0;
+}

@@ -4,7 +4,11 @@ $icon-font-path: '../fonts/';
 // endbower
 
 @import "app";
-@import "navbartest";
+@import "intro";
+@import "rightbar";
+@import "leftbar";
+@import "radio-button";
+@import "results";
 
 
 .browserupgrade {
@@ -88,28 +92,4 @@ $icon-font-path: '../fonts/';
     border-bottom: 0;
     font-weight: 200;
   }
-}
-
-.container-fluid {
-  border: 1px solid black;
-  border-radius: 4px;
-  margin: 0px;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-h3 {
-    margin-left: 5%;
-}
-
-.col-xs-3 {
-    width: 13.5%;
-}
-
-.chart-box {
-
-}
-
-.img-circle {
-    border: 1px solid black;
 }

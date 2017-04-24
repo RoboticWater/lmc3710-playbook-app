@@ -1,168 +1,16 @@
-body {
-  padding: 0;
-}
-
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-
-.progress {
-  // background: #d14;
-  background: #fff;
-  position: fixed;
-  right: 0;
-  margin: 0;
-  height: 51px;
-}
-
-.sidebar {
-  display: none;
-  font-size: 11pt;
-  a {
-    color: #cacaca;
-    transition: color 0.5s ease;
-  }
-  li {
-    list-style-type: none;
-  }
-  & > ul {
-    position: absolute;
-    display: inline-block;
-    padding: 0;
-    right: 18px;
-    &:before {
-      position: absolute;
-      left: 12px;
-      top: 10px;
-      content: "";
-      height: 75%;
-      width: 2px;
-      background: #888;
-    }
-    & > li {
-      position: relative;
-      padding-left: 4px;
-      &:before {
-        content: "";
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        left: 10px;
-        top: 7px;
-        background: #888;
-        border-radius: 6px;
-      }
-      &:after {
-        position: absolute;
-        content: "";
-        background: #888;
-        height: 2px;
-        width: 15px;
-        top: 9px;
-        left: 10px;
-//        z-index: 5000;
-      }
-      & > a {
-        padding-left: 25px;
-      }
-      & > ul {
-        padding: 0;
-        & > li {
-          margin: 0;
-          padding-left: 18px;
-          font-size: 9pt;
-        }
-      }
-    }
-  }
-}
-
-#rightColumn {
-    background-color: #fafafa; 
-    border-right: 1px solid #eee;
-    height: 100vh;
-    right: 0;
-    padding-top: 1%;
-    display: none;
-    &:after {
-        content: "";
-        background: #f00;
-        position: fixed;
-        display: block;
-        width: 100px;
-        height: 100px;
-        top: 100px;
-        left: 100px;
-    }
-}
-
-.sub-play.current {
-  & > a {
-    color: #888;
-  }
-  .current a {
-    color: #888;
-  }
-}
-
-.parts {
-  display: table;
-  margin-top: -10px;
-  width: 70px;
-  .spacer {
-    display: table-cell;
-    .bar {
-      background: #ccc;
-      height: 2px;
-      margin: 2px;
-      border-radius: 2px;
-      transition: background 0.5s ease;
-      &.done {
-        background: #29f;
-        // -webkit-box-shadow: 0px 0px 2px 0px rgba(32,144,240,0.55);
-        // -moz-box-shadow: 0px 0px 2px 0px rgba(32,144,240,0.55);
-        // box-shadow: 0px 0px 2px 0px rgba(32,144,240,0.55);
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fafafa;
-    border-right: 1px solid #eee;
-  }
-    #rightColumn {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fafafa;
-    border-right: 1px solid #eee;
-  }
-}
-
 .main {
   height: 100vh;
-  overflow-y: hidden;
-  width: 700px;
+  display: block;
+  overflow: hidden;
+  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
+  transition: margin 0.3s ease;
+  transition: width 0.3s ease;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
   .content {
+    background: rgb(245, 245, 245);
     height: 100vh;
     -webkit-transition: margin-top 1s ease;
     transition: margin-top 1s ease;
@@ -170,26 +18,43 @@ body {
       margin-top: -100vh;
     }
     .shelf {
+      box-shadow: none;
       margin-bottom: 0;
       border-radius: 0;
       height: 15%;
     }
     .questions {
+      background: #fff;
       position: relative;
       height: 72%;
+      border-bottom: 1px solid #ddd;
     }
   }
 }
 
-.intro {
-  height: 100%;
-  max-height: 100vh;
-  overflow: hidden;
-  text-align: center;
-  -webkit-transition: margin-top 1s ease;
-  transition: margin-top 1s ease;
-  &.done {
-    margin-top: -100vh;
+@media (max-width: 1665px) {
+  .main {
+    width: calc(100% - 680px);
+  }
+}
+@media (max-width: 1200px) {
+  .main {
+    width: calc(100% - 390px);
+    margin-left: 50px;
+  }
+  .hide-rightbar .main {
+    width: 100%;
+    margin: 0 auto ;
+  }
+}
+@media (max-width: 1100px) {
+  .main {
+    width: calc(100% - 80px);
+    margin: 0 auto;
+  }
+  .hide-rightbar .main {
+    width: calc(100% - 80px);
+    margin: 0 auto;
   }
 }
 
@@ -202,6 +67,7 @@ body {
   .going-from-here {
     margin-top: 20px;
   }
+  overflow-y: scroll;
 }
 
 .question {
@@ -212,7 +78,7 @@ body {
   overflow: hidden;
   height: 100%;
   text-align: center;
-  box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.25);
+  // box-shadow: 0px -1px 25px -6px rgba(0,0,0,0.25);
   .slider {
     position: absolute;
     bottom: 40%;

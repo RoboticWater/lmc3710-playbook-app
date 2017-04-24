@@ -1,0 +1,101 @@
+/* Type */
+@font-face {
+    font-family: "WHTF";
+    font-weight: 200;
+    src: url("type/WhitneyHTF-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "WHTF";
+    font-style: italic;
+    font-weight: 200;
+    src: url("type/WhitneyHTF-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "WHTF";
+    font-weight: 500;
+    src: url("type/WhitneyHTF-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "WHTF";
+    font-style: italic;
+    font-weight: 500;
+    src: url("type/WhitneyHTF-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "WHTF-cd";
+    font-weight: 500;
+    src: url("type/WhitneyHTF-SemiBoldCondensed.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "WHTF-cd";
+    font-weight: 900;
+    src: url("type/WhitneyHTF-BoldCondensed.ttf") format("truetype");
+}
+
+/* Styles */
+
+body{
+    font-family: "WHTF", "helvetica", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.3em;
+}
+
+.Alt-body-text{
+    font-variant: small-caps;
+}
+
+h1{
+    font-family: "WHTF-cd", "helvetica", sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-top: 30px;
+}
+.jumbotron > h1 {
+    font-family: "WHTF-cd", "helvetica", sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-top: 30px;
+}
+
+h2{
+    font-family: "WHTF", "helvetica", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* For styleguide only */
+h3{
+    font-family: "WHTF", "helvetica", sans-serif;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-size: 20px;
+    margin-top: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+#container{
+    margin: 15px;
+    width: 650px;
+}
+
+.white{
+    color: #fff;
+    font-weight: 500;
+}
+
+img{
+    margin-right: 30px;
+}
