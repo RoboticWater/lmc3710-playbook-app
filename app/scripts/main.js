@@ -213,7 +213,7 @@ function generateSideChart() {
 	temparr[2] = Math.ceil((Number(temparr[2])/80)*100);
 	temparr[3] = Math.ceil((Number(temparr[3])/68)*100);
 	data1 = {
-	    labels: ['Bring People In', 'Know your Community', 'Focus on Issues', 'Talk it Up'],
+	    labels: ['1', '2', '3', '4'],
 	    datasets: [{
 	            label: 'Results data',
 	            backgroundColor: 'rgba(179,181,198,0.2)',
