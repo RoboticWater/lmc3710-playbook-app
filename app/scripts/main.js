@@ -83,6 +83,8 @@ function goToQuestion(q) {
 		$('#' + q).fadeIn(fadeSpeed);
 	}
 	$('#' + questions[current].subplay).removeClass('current');
+	if (questions[current].group !== questions[q].group) $('#' + questions[current].group).addClass('done');
+	if (questions[current].subplay !== questions[q].subplay) $('#' + questions[current].subplay).addClass('done');
 	current = q;
 	// console.log('#' + questions[current].group);
 	$('#' + questions[current].subplay).addClass('current');
@@ -187,6 +189,10 @@ function generateSideChart() {
       }
 	});
 
+}
+
+function getIntermediateQuestions(q1, q2) {
+	
 }
 
 
