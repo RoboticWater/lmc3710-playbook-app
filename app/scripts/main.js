@@ -19,7 +19,7 @@ var qSlider;
 // };
 
 $(function() {
-	$.getJSON('/resources/questions.json', function(json) {
+	$.getJSON('/questions.json', function(json) {
 		questions = json;
 		$.each(questions, function(index, value) {
 			$('#' + value.group + ' .parts').append('<div class="spacer"><div class="bar" id="bar-' + index + '"></div></div>')
@@ -27,7 +27,7 @@ $(function() {
 	}).fail(function(d, textStatus, error) {
         console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
     });
-    $.getJSON('/resources/totals.json', function(json) {
+    $.getJSON('/totals.json', function(json) {
 		totals = json;
 	}).fail(function(d, textStatus, error) {
         console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
