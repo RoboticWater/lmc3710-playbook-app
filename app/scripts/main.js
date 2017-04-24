@@ -1,23 +1,29 @@
 var order = ["q1"];
 var current = "q1";
 var questions;
+var totals;
 var resultData = {};
 
 var fadeSpeed = 250;
 
 var qSlider;
 
-window.onresize = displayWindowSize;
-window.onload = displayWindowSize;
-function displayWindowSize() {
-    var myWidth = window.innerWidth;
-    var myHeight = window.innerHeight;
-    document.getElementById("dimensions").innerHTML = myWidth + "x" + myHeight;
-};
+// window.onresize = displayWindowSize;
+// window.onload = displayWindowSize;
+// function displayWindowSize() {
+//     var myWidth = window.innerWidth;
+//     var myHeight = window.innerHeight;
+//     document.getElementById("dimensions").innerHTML = myWidth + "x" + myHeight;
+// };
 
-$(document).ready(function() {
+$(function() {
 	$.getJSON('/resources/questions.json', function(json) {
 		questions = json;
+	}).fail(function(d, textStatus, error) {
+        console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
+    });
+    $.getJSON('/resources/totals.json', function(json) {
+		totals = json;
 	}).fail(function(d, textStatus, error) {
         console.error('getJSON failed, status: ' + textStatus + ', error: '+error)
     });
