@@ -6,18 +6,60 @@
     min-height: 75px;
   }
 }
-#bring-results .head {
-  background-color: #ffe9c9;
+
+.prog {
+    border: 1px solid #ddd;
+    height: 21px;
+    border-radius: 0px;
+    div {
+      width: 50%;
+      height: 95%;
+      border-radius: 0px;
+    }
 }
 
-#know-results .head {
-  background-color: #e9e2ff;
+#bring-results {
+  .head {
+    background-color: #ffe9c9;
+  }
+  .prog div {
+    background: #edac00;
+    border-color: #edac00;
+  }
 }
 
-#focus-results .head {
-  background-color: #deebf7;
+#know-results {
+  .head {
+    background-color: #e9e2ff;
+  }
+  .prog div {
+    background: #b175d7;
+    border-color: #b175d7;
+  }
 }
 
-#talk-results .head {
-  background-color: #cfffdb;
+#focus-results {
+  .head {
+    background-color: #deebf7;
+  }
+  .prog div {
+    background: #23a3d0;
+    border-color: #23a3d0;
+  }
+}
+
+#talk-results {
+  .head {
+    background-color: #cfffdb;
+  }
+  .prog div {
+    background: #27da90;
+    border-color: #27da90;
+  }
+}
+
+.breakdown {
+  hr {
+    margin: -5px 0 5px 0;
+  }
 }
